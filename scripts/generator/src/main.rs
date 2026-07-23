@@ -560,12 +560,10 @@ fn generate_bindings(sdk_native_dir: &Path, api_version: u32) -> anyhow::Result<
     for binding in get_bindings_config(api_version) {
         let header_filename = sysroot_include_dir.join(&binding.include_filename);
         let header_filename_str = header_filename.to_str().context("Unicode")?;
-        if only_gen_module
-            .as_ref()
-            .and_then(|name| header_filename_str.contains(name).then_some(()))
-            .is_some()
-        {
-            continue;
+        if let Some(pattern) = &only_gen_module {
+            if !header_filename_str.contains(pattern) {
+                continue;
+            }
         }
         debug!("Generating binding: {}", binding.include_filename);
         let builder = base_builder.clone().header(header_filename_str);

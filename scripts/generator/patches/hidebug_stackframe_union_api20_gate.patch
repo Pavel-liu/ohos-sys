@@ -1,0 +1,11 @@
+--- a/components/hidebug/src/hidebug_ffi.rs
++++ b/components/hidebug/src/hidebug_ffi.rs
+@@ -292,6 +292,8 @@
+     pub frame: HiDebug_StackFrame__bindgen_ty_1,
+ }
+ /// frame content.
++#[cfg(feature = "api-20")]
++#[cfg_attr(docsrs, doc(cfg(feature = "api-20")))]
+ #[repr(C)]
+ #[derive(Copy, Clone)]
+ pub union HiDebug_StackFrame__bindgen_ty_1 {

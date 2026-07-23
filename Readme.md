@@ -38,6 +38,7 @@ already been generated.
 | hid                                     |        |           |                           |
 | hidebug                                 |        |           |                           |
 | hilog                                   | ✅      | 23        | [hilog-sys]               |
+| hidebug                                 | ✅      | 23        | [ohos-hidebug-sys]        |
 | hitrace                                 | ✅      | 23        | [hitrace-sys]             |
 | huks                                    | ✅      | 23        | [ohos-huks-sys]           |
 | info                                    | ✅      | 23        | [ohos-deviceinfo-sys]     |
@@ -84,6 +85,7 @@ already been generated.
 
 [arkui-sys]: https://docs.rs/arkui-sys/latest/arkui_sys/
 [hilog-sys]: https://docs.rs/hilog-sys/latest/hilog_sys/
+[ohos-hidebug-sys]: https://docs.rs/ohos-hidebug-sys/latest/ohos_hidebug_sys/
 [hitrace-sys]: https://docs.rs/hitrace-sys/latest/hitrace_sys/
 [ohos-drawing-sys]: https://docs.rs/ohos-drawing-sys/latest/ohos_drawing_sys/
 [ohos-ime-sys]: https://docs.rs/ohos-ime-sys/latest/ohos_ime_sys/

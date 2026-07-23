@@ -212,5 +212,22 @@ pub(crate) fn get_bindings_config(_api_version: u32) -> Vec<BindingConf> {
                     .raw_line("use ohos_sys_opaque_types::OHIPCRemoteProxy;")
             }),
         },
+        BindingConf {
+            include_filename: "hidebug/hidebug.h".to_string(),
+            output_prefix: "components/hidebug/src/hidebug".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .newtype_enum("^HiDebug_ErrorCode$")
+                    .newtype_enum("^HiDebug_TraceFlag$")
+                    .newtype_enum("^HiDebug_StackFrameType$")
+                    .newtype_enum("^HiDebug_CrashObjType$")
+                    .allowlist_file(r".*/hidebug/hidebug_type\.h")
+                    .allowlist_file(r".*/hidebug/hidebug\.h")
+                    .blocklist_type("off_t")
+                    .raw_line("pub type off_t = ::core::ffi::c_long;")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+            }),
+        },
     ]
 }
