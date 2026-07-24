@@ -244,5 +244,139 @@ pub(crate) fn get_bindings_config(_api_version: u32) -> Vec<BindingConf> {
                     .clang_arg("stdbool.h")
             }),
         },
+        BindingConf {
+            include_filename: "native_display_soloist/native_display_soloist.h".to_string(),
+            output_prefix: "components/native_display_soloist/src/native_display_soloist".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .allowlist_file(r".*/native_display_soloist/native_display_soloist\.h")
+                    .blocklist_file(r".*/native_effect/effect_filter\.h")
+                    .blocklist_file(r".*/native_effect/effect_types\.h")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+            }),
+        },
+        BindingConf {
+            include_filename: "purgeable_memory/purgeable_memory.h".to_string(),
+            output_prefix: "components/purgeable_memory/src/purgeable_memory".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .allowlist_file(r".*/purgeable_memory/purgeable_memory\.h")
+                    .blocklist_file(r".*/native_effect/effect_filter\.h")
+                    .blocklist_file(r".*/native_effect/effect_types\.h")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+            }),
+        },
+        BindingConf {
+            include_filename: "native_color_space_manager/native_color_space_manager.h".to_string(),
+            output_prefix: "components/native_color_space_manager/src/native_color_space_manager".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .newtype_enum("^ColorSpaceName$")
+                    .allowlist_file(r".*/native_color_space_manager/native_color_space_manager\.h")
+                    .blocklist_file(r".*/native_effect/effect_filter\.h")
+                    .blocklist_file(r".*/native_effect/effect_types\.h")
+                    .raw_line("#[cfg(feature = \"api-13\")]")
+                    .raw_line("#[cfg_attr(docsrs, doc(cfg(feature = \"api-13\")))]")
+                    .raw_line("pub struct OH_NativeColorSpaceManager;")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+            }),
+        },
+        BindingConf {
+            include_filename: "background_process_manager/background_process_manager.h".to_string(),
+            output_prefix: "components/background_process_manager/src/background_process_manager".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .newtype_enum("^BackgroundProcessManager_ProcessPriority$")
+                    .newtype_enum("^BackgroundProcessManager_ErrorCode$")
+                    .allowlist_file(r".*/background_process_manager/background_process_manager\.h")
+                    .blocklist_file(r".*/native_effect/effect_filter\.h")
+                    .blocklist_file(r".*/native_effect/effect_types\.h")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+            }),
+        },
+        BindingConf {
+            include_filename: "hid/hid_ddk_api.h".to_string(),
+            output_prefix: "components/hid/src/hid".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .allowlist_file(r".*/hid/hid_ddk_api\.h")
+                    .allowlist_file(r".*/hid/hid_ddk_types\.h")
+                    .blocklist_file(r".*/native_effect/effect_filter\.h")
+                    .blocklist_file(r".*/native_effect/effect_types\.h")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+            }),
+        },
+        BindingConf {
+            include_filename: "ddk/ddk_api.h".to_string(),
+            output_prefix: "components/ddk/src/ddk".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .allowlist_file(r".*/ddk/ddk_api\.h")
+                    .allowlist_file(r".*/ddk/ddk_types\.h")
+                    .blocklist_file(r".*/native_effect/effect_filter\.h")
+                    .blocklist_file(r".*/native_effect/effect_types\.h")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+            }),
+        },
+        BindingConf {
+            include_filename: "native_effect/effect_filter.h".to_string(),
+            output_prefix: "components/native_effect/src/native_effect".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .allowlist_file(r".*/native_effect/effect_filter\.h")
+                    .allowlist_file(r".*/native_effect/effect_types\.h")
+                    .blocklist_type("OH_PixelmapNative")
+                    .raw_line("#[cfg(feature = \"api-12\")]")
+                    .raw_line("#[cfg_attr(docsrs, doc(cfg(feature = \"api-12\")))]")
+                    .raw_line("pub struct OH_PixelmapNative;")
+                    .clang_args(&["-x", "c++"])
+            }),
+        },
+        BindingConf {
+            include_filename: "usb_serial/usb_serial_api.h".to_string(),
+            output_prefix: "components/usb_serial/src/usb_serial".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .allowlist_file(r".*/usb_serial/usb_serial_api\.h")
+                    .allowlist_file(r".*/usb_serial/usb_serial_types\.h")
+                    .blocklist_file(r".*/native_effect/effect_filter\.h")
+                    .blocklist_file(r".*/native_effect/effect_types\.h")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+            }),
+        },
+        BindingConf {
+            include_filename: "scsi_peripheral/scsi_peripheral_api.h".to_string(),
+            output_prefix: "components/scsi_peripheral/src/scsi_peripheral".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .allowlist_file(r".*/scsi_peripheral/scsi_peripheral_api\.h")
+                    .allowlist_file(r".*/scsi_peripheral/scsi_peripheral_types\.h")
+                    .blocklist_file(r".*/native_effect/effect_filter\.h")
+                    .blocklist_file(r".*/native_effect/effect_types\.h")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+            }),
+        },
+        BindingConf {
+            include_filename: "transient_task/transient_task_api.h".to_string(),
+            output_prefix: "components/transient_task/src/transient_task".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .newtype_enum("^TransientTask_ErrorCode$")
+                    .allowlist_file(r".*/transient_task/transient_task_api\.h")
+                    .allowlist_file(r".*/transient_task/transient_task_type\.h")
+                    .blocklist_file(r".*/native_effect/effect_filter\.h")
+                    .blocklist_file(r".*/native_effect/effect_types\.h")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+            }),
+        },
     ]
 }

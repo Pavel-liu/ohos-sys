@@ -29,13 +29,14 @@ already been generated.
 | asset                                   | ✅      | 23        | [ohos-asset-store-sys]    |
 | bundle                                  |        |           |                           |
 | database                                | ✅      | 23        | [ohos-rdb-sys]            |
-| ddk                                     |        |           |                           |
+| background_process_manager              | ✅      | 23        | [ohos-background-process-manager-sys] |
+| ddk                                     | ✅      | 23        | [ohos-ddk-sys]            |
 | distributedhardware                     |        |           |                           |
 | ffrt                                    |        |           |                           |
 | filemanagement                          |        |           |                           |
 | hiappevent                              |        |           |                           |
 | hicollie                                | ✅      | 23        | [ohos-hicollie-sys]       |
-| hid                                     |        |           |                           |
+| hid                                     | ✅      | 23        | [ohos-hid-sys]            |
 | hidebug                                 | ✅      | 23        | [ohos-hidebug-sys]        |
 | hilog                                   | ✅      | 23        | [hilog-sys]               |
 | hitrace                                 | ✅      | 23        | [hitrace-sys]             |
@@ -53,10 +54,10 @@ already been generated.
 | multimodalinput                         | ✅      | 23        | [ohos-input-sys]          |
 | napi                                    | ✅      | 23        |                           |
 | native_buffer                           | ✅      | 23        | [ohos-window-sys]         |
-| native_color_space_manager              |        |           |                           |
-| native_display_soloist                  |        |           |                           |
+| native_color_space_manager              | ✅      | 23        | [ohos-native-color-space-manager-sys] |
+| native_display_soloist                  | ✅      | 23        | [ohos-native-display-soloist-sys] |
 | native_drawing                          | ✅      | 23        | [ohos-drawing-sys]        |
-| native_effect                           |        |           |                           |
+| native_effect                           | ✅      | 23        | [ohos-native-effect-sys]  |
 | native_fence                            | ✅      | 23        | [ohos-window-sys]         |
 | native_image                            | ✅      | 23        | [ohos-window-sys]         |
 | native_vsync                            | ✅      | 23        | [ohos-vsync-sys]          |
@@ -68,17 +69,17 @@ already been generated.
 | ohaudio                                 | ✅      | 23        | [ohaudio-sys]             |
 | ohcamera                                |        |           |                           |
 | Pasteboard                              | ✅      | 23        | [ohos-pasteboard-sys]     |
-| purgeable_memory                        |        |           |                           |
+| purgeable_memory                        | ✅      | 23        | [ohos-purgeable-memory-sys] |
 | qos                                     | ✅      | 23        | [ohos-libqos-sys]         |
 | rawfile                                 | ✅      | 23        | [ohos-rawfile-sys]        |
 | resourcemanager                         |        |           |                           |
 | sensors                                 | ✅      | 23        | [ohos-sensors-sys]        |
-| SCSI Peripherals                        |        |           |                           |
+| SCSI Peripherals                        | ✅      | 23        | [ohos-scsi-peripheral-sys] |
 | telephony                               |        |           |                           |
-| transient_task                          |        |           |                           |
+| transient_task                          | ✅      | 23        | [ohos-transient-task-sys] |
 | Unified Data Management Framework(UDMF) | ✅      | 23        | [udmf-sys]                |
 | usb                                     |        |           |                           |
-| usb serial                              |        |           |                           |
+| usb serial                              | ✅      | 23        | [ohos-usb-serial-sys]     |
 | web                                     | ✅      | 23        | [arkweb-sys]            |
 | window_manager                          | ✅      | 23        | [ohos-window-manager-sys] |
 
@@ -117,6 +118,16 @@ already been generated.
 [ohos-huks-sys]: https://docs.rs/ohos-huks-sys/latest/ohos_huks_sys/
 [ohos-accesstoken-sys]: https://docs.rs/ohos-accesstoken-sys/latest/ohos_accesstoken_sys/
 [ohos-deviceinfo-sys]: https://docs.rs/ohos-deviceinfo-sys/latest/ohos_deviceinfo_sys/
+[ohos-background-process-manager-sys]: https://docs.rs/ohos-background-process-manager-sys/latest/ohos_background_process_manager_sys/
+[ohos-ddk-sys]: https://docs.rs/ohos-ddk-sys/latest/ohos_ddk_sys/
+[ohos-hid-sys]: https://docs.rs/ohos-hid-sys/latest/ohos_hid_sys/
+[ohos-native-color-space-manager-sys]: https://docs.rs/ohos-native-color-space-manager-sys/latest/ohos_native_color_space_manager_sys/
+[ohos-native-display-soloist-sys]: https://docs.rs/ohos-native-display-soloist-sys/latest/ohos_native_display_soloist_sys/
+[ohos-native-effect-sys]: https://docs.rs/ohos-native-effect-sys/latest/ohos_native_effect_sys/
+[ohos-purgeable-memory-sys]: https://docs.rs/ohos-purgeable-memory-sys/latest/ohos_purgeable_memory_sys/
+[ohos-scsi-peripheral-sys]: https://docs.rs/ohos-scsi-peripheral-sys/latest/ohos_scsi_peripheral_sys/
+[ohos-transient-task-sys]: https://docs.rs/ohos-transient-task-sys/latest/ohos_transient_task_sys/
+[ohos-usb-serial-sys]: https://docs.rs/ohos-usb-serial-sys/latest/ohos_usb_serial_sys/
 
 
 ## Development
