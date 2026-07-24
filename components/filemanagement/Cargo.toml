@@ -1,0 +1,49 @@
+[package]
+name = "ohos-filemanagement-sys"
+version = "0.1.0"
+edition = "2021"
+keywords = ["OpenHarmony", "HarmonyOS", "ffi", "filemanagement", "fileio", "fileshare", "environment"]
+license = "Apache-2.0"
+description = "Raw bindings to the OpenHarmony CoreFileKit native APIs"
+repository = "https://github.com/openharmony-rs/ohos-sys"
+readme = "README.md"
+include = ["/src"]
+
+[dependencies]
+document-features = { version = "0.2", optional = true }
+libc = "0.2"
+
+[features]
+default = []
+
+## No effect. API-10 through API-11 have no FileManagement bindings.
+## The feature exists for internal purposes.
+api-10 = []
+api-11 = ["api-10"]
+## Enables bindings for OpenHarmony API-level 12. This is the lowest API level
+## at which any FileManagement APIs are available — selecting this feature is required to
+## use the environment, fileio, fileshare, and file_uri APIs.
+api-12 = ["api-11"]
+api-13 = ["api-12"]
+api-14 = ["api-13"]
+api-15 = ["api-14"]
+api-16 = ["api-15"]
+api-17 = ["api-16"]
+api-18 = ["api-17"]
+api-19 = ["api-18"]
+api-20 = ["api-19"]
+## Enables bindings for OpenHarmony API-level 21. This is the lowest API level
+## at which the CloudDiskManager API is available.
+api-21 = ["api-20"]
+api-22 = ["api-21"]
+api-23 = ["api-22"]
+## Document available features when building the documentation
+document-features = ["dep:document-features"]
+
+[package.metadata.docs.rs]
+features = ["document-features"]
+targets = ["aarch64-unknown-linux-ohos", "armv7-unknown-linux-ohos", "x86_64-unknown-linux-ohos"]
+all-features = true
+
+[lints.clippy]
+doc_lazy_continuation = "allow"

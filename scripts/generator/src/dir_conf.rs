@@ -1347,6 +1347,128 @@ pub(crate) fn get_module_bindings_config() -> Vec<DirBindingsConf> {
             ..Default::default()
         },
         DirBindingsConf {
+            directory: "filemanagement/environment".to_string(),
+            output_dir: "components/filemanagement/src/environment".to_string(),
+            rename_output_file: Some(Box::new(|stem| strip_prefix(stem, "oh_"))),
+            set_builder_opts: Box::new(|file_stem, header_path, builder| {
+                let builder = builder
+                    .allowlist_file(header_path.to_str().unwrap())
+                    .result_error_enum("FileManagement_ErrCode")
+                    .parse_callbacks(Box::new(ResultEnumParseCallbacks {
+                        rename_item: Box::new(|original_item_name| match original_item_name {
+                            "FileManagement_ErrCode" => Some("FileManagementResult".to_string()),
+                            _ => None,
+                        }),
+                        ..Default::default()
+                    }))
+                    .clang_args(["-include", "stdbool.h"]);
+                match file_stem {
+                    "environment" => builder.raw_line("use crate::environment::error_code::FileManagementResult;"),
+                    _ => builder,
+                }
+            }),
+            ..Default::default()
+        },
+        DirBindingsConf {
+            directory: "filemanagement/fileio".to_string(),
+            output_dir: "components/filemanagement/src/fileio".to_string(),
+            rename_output_file: Some(Box::new(|stem| strip_prefix(stem, "oh_"))),
+            set_builder_opts: Box::new(|file_stem, header_path, builder| {
+                let builder = builder
+                    .allowlist_file(header_path.to_str().unwrap())
+                    .result_error_enum("FileManagement_ErrCode")
+                    .newtype_enum("^FileIO_FileLocation$")
+                    .parse_callbacks(Box::new(ResultEnumParseCallbacks {
+                        rename_item: Box::new(|original_item_name| match original_item_name {
+                            "FileManagement_ErrCode" => Some("FileManagementResult".to_string()),
+                            _ => None,
+                        }),
+                        ..Default::default()
+                    }))
+                    .clang_args(["-include", "stdbool.h"]);
+                match file_stem {
+                    "fileio" => builder.raw_line("use crate::environment::error_code::FileManagementResult;"),
+                    _ => builder,
+                }
+            }),
+            ..Default::default()
+        },
+        DirBindingsConf {
+            directory: "filemanagement/fileshare".to_string(),
+            output_dir: "components/filemanagement/src/fileshare".to_string(),
+            rename_output_file: Some(Box::new(|stem| strip_prefix(stem, "oh_"))),
+            set_builder_opts: Box::new(|file_stem, header_path, builder| {
+                let builder = builder
+                    .allowlist_file(header_path.to_str().unwrap())
+                    .result_error_enum("FileManagement_ErrCode")
+                    .bitfield_enum("^FileShare_OperationMode$")
+                    .newtype_enum("^FileShare_PolicyErrorCode$")
+                    .parse_callbacks(Box::new(ResultEnumParseCallbacks {
+                        rename_item: Box::new(|original_item_name| match original_item_name {
+                            "FileManagement_ErrCode" => Some("FileManagementResult".to_string()),
+                            _ => None,
+                        }),
+                        ..Default::default()
+                    }))
+                    .clang_args(["-include", "stdbool.h"]);
+                match file_stem {
+                    "file_share" => builder.raw_line("use crate::environment::error_code::FileManagementResult;"),
+                    _ => builder,
+                }
+            }),
+            ..Default::default()
+        },
+        DirBindingsConf {
+            directory: "filemanagement/file_uri".to_string(),
+            output_dir: "components/filemanagement/src/file_uri".to_string(),
+            rename_output_file: Some(Box::new(|stem| strip_prefix(stem, "oh_"))),
+            set_builder_opts: Box::new(|file_stem, header_path, builder| {
+                let builder = builder
+                    .allowlist_file(header_path.to_str().unwrap())
+                    .result_error_enum("FileManagement_ErrCode")
+                    .parse_callbacks(Box::new(ResultEnumParseCallbacks {
+                        rename_item: Box::new(|original_item_name| match original_item_name {
+                            "FileManagement_ErrCode" => Some("FileManagementResult".to_string()),
+                            _ => None,
+                        }),
+                        ..Default::default()
+                    }))
+                    .clang_args(["-include", "stdbool.h"]);
+                match file_stem {
+                    "file_uri" => builder.raw_line("use crate::environment::error_code::FileManagementResult;"),
+                    _ => builder,
+                }
+            }),
+            ..Default::default()
+        },
+        DirBindingsConf {
+            directory: "filemanagement/clouddiskmanager".to_string(),
+            output_dir: "components/filemanagement/src/clouddiskmanager".to_string(),
+            rename_output_file: Some(Box::new(|stem| strip_prefix(stem, "oh_"))),
+            set_builder_opts: Box::new(|file_stem, header_path, builder| {
+                let builder = builder
+                    .allowlist_file(header_path.to_str().unwrap())
+                    .result_error_enum("CloudDisk_ErrorCode")
+                    .newtype_enum("^CloudDisk_SyncState$")
+                    .newtype_enum("^CloudDisk_OperationType$")
+                    .newtype_enum("^CloudDisk_ErrorReason$")
+                    .newtype_enum("^CloudDisk_SyncFolderState$")
+                    .parse_callbacks(Box::new(ResultEnumParseCallbacks {
+                        rename_item: Box::new(|original_item_name| match original_item_name {
+                            "CloudDisk_ErrorCode" => Some("CloudDiskResult".to_string()),
+                            _ => None,
+                        }),
+                        ..Default::default()
+                    }))
+                    .clang_args(["-include", "stdbool.h", "-x", "c++"]);
+                match file_stem {
+                    "cloud_disk_manager" => builder.raw_line("use crate::clouddiskmanager::cloud_disk_error_code::CloudDiskResult;"),
+                    _ => builder,
+                }
+            }),
+            ..Default::default()
+        },
+        DirBindingsConf {
             directory: "ffrt".to_string(),
             output_dir: "components/ffrt/src".to_string(),
             rename_output_file: Some(Box::new(|stem| {

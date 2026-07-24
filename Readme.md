@@ -13,7 +13,7 @@ already been generated.
 |-----------------------------------------|--------|-----------|---------------------------|
 | AbilityKit                              | ✅      | 23        | [ohos-abilitykit-sys]     |
 | BasicServicesKit                        | ✅      | 23        | [ohos-basic-services-kit-sys] |
-| Background Process Manager              |        |           |                           |
+| Background Process Manager              | ✅      | 23        | [ohos-background-process-manager-sys] |
  | ConnectivityKit                       | ✅      | 23        | [ohos-connectivitykit-sys] |
 | CryptoArchitectureKit                   | ✅      | 23        | [ohos-crypto-sys]         |
 | DataProtectionKit                       | ✅      | 23        | [ohos-dataprotectionkit-sys] |
@@ -33,7 +33,7 @@ already been generated.
 | ddk                                     | ✅      | 23        | [ohos-ddk-sys]            |
 | distributedhardware                     |        |           |                           |
 | ffrt                                    | ✅      | 23        | [ohos-ffrt-sys]           |
-| filemanagement                          |        |           |                           |
+| filemanagement                          | ✅      | 23        | [ohos-filemanagement-sys] |
 | hiappevent                              | ✅      | 23        | [ohos-hiappevent-sys]     |
 | hicollie                                | ✅      | 23        | [ohos-hicollie-sys]       |
 | hid                                     | ✅      | 23        | [ohos-hid-sys]            |
@@ -141,6 +141,7 @@ already been generated.
 [ohos-usb-sys]: https://docs.rs/ohos-usb-sys/latest/ohos_usb_sys/
 [ohos-ffrt-sys]: https://docs.rs/ohos-ffrt-sys/latest/ohos_ffrt_sys/
 [ohos-connectivitykit-sys]: https://docs.rs/ohos-connectivitykit-sys/latest/ohos_connectivitykit_sys/
+[ohos-filemanagement-sys]: https://docs.rs/ohos-filemanagement-sys/latest/ohos_filemanagement_sys/
 
 
 ## Development
