@@ -34,7 +34,7 @@ already been generated.
 | ffrt                                    |        |           |                           |
 | filemanagement                          |        |           |                           |
 | hiappevent                              |        |           |                           |
-| hicollie                                | ✅      | 18        | [ohos-hicollie-sys]       |
+| hicollie                                | ✅      | 23        | [ohos-hicollie-sys]       |
 | hid                                     |        |           |                           |
 | hidebug                                 | ✅      | 23        | [ohos-hidebug-sys]        |
 | hilog                                   | ✅      | 23        | [hilog-sys]               |
