@@ -14,7 +14,7 @@ already been generated.
 | AbilityKit                              | ✅      | 23        | [ohos-abilitykit-sys]     |
 | BasicServicesKit                        | ✅      | 23        | [ohos-basic-services-kit-sys] |
 | Background Process Manager              |        |           |                           |
-| ConnectivityKit                         |        |           |                           |
+ | ConnectivityKit                       | ✅      | 23        | [ohos-connectivitykit-sys] |
 | CryptoArchitectureKit                   | ✅      | 23        | [ohos-crypto-sys]         |
 | DataProtectionKit                       | ✅      | 23        | [ohos-dataprotectionkit-sys] |
  | GameControllerKit                       | ✅      | 23        | [ohos-gamecontrollerkit-sys] |
@@ -140,6 +140,7 @@ already been generated.
 [ohos-telephony-sys]: https://docs.rs/ohos-telephony-sys/latest/ohos_telephony_sys/
 [ohos-usb-sys]: https://docs.rs/ohos-usb-sys/latest/ohos_usb_sys/
 [ohos-ffrt-sys]: https://docs.rs/ohos-ffrt-sys/latest/ohos_ffrt_sys/
+[ohos-connectivitykit-sys]: https://docs.rs/ohos-connectivitykit-sys/latest/ohos_connectivitykit_sys/
 
 
 ## Development

@@ -135,6 +135,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "ohos-connectivitykit-sys"
+version = "0.1.0"
+dependencies = [
+ "document-features",
+ "libc",
+]
+
+[[package]]
 name = "ohos-crypto-sys"
 version = "0.1.1"
 dependencies = [
@@ -404,6 +412,7 @@ dependencies = [
  "ohos-accesstoken-sys",
  "ohos-asset-store-sys",
  "ohos-basic-services-kit-sys",
+ "ohos-connectivitykit-sys",
  "ohos-crypto-sys",
  "ohos-dataprotectionkit-sys",
  "ohos-deviceinfo-sys",

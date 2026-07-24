@@ -1316,6 +1316,37 @@ pub(crate) fn get_module_bindings_config() -> Vec<DirBindingsConf> {
             ..Default::default()
         },
         DirBindingsConf {
+            directory: "ConnectivityKit/bluetooth".to_string(),
+            output_dir: "components/ConnectivityKit/src".to_string(),
+            rename_output_file: Some(Box::new(|stem| strip_prefix(stem, "oh_"))),
+            set_builder_opts: Box::new(|_file_stem, header_path, builder| {
+                builder
+                    .allowlist_file(header_path.to_str().unwrap())
+                    .blocklist_file(r".*/native_effect/effect_filter\.h")
+                    .blocklist_file(r".*/native_effect/effect_types\.h")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+                    .newtype_enum("^Bluetooth_SwitchState$")
+                    .newtype_enum("^Bluetooth_ResultCode$")
+            }),
+            ..Default::default()
+        },
+        DirBindingsConf {
+            directory: "ConnectivityKit/wifi".to_string(),
+            output_dir: "components/ConnectivityKit/src".to_string(),
+            rename_output_file: Some(Box::new(|stem| strip_prefix(stem, "oh_"))),
+            set_builder_opts: Box::new(|_file_stem, header_path, builder| {
+                builder
+                    .allowlist_file(header_path.to_str().unwrap())
+                    .blocklist_file(r".*/native_effect/effect_filter\.h")
+                    .blocklist_file(r".*/native_effect/effect_types\.h")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+                    .newtype_enum("^Wifi_ResultCode$")
+            }),
+            ..Default::default()
+        },
+        DirBindingsConf {
             directory: "ffrt".to_string(),
             output_dir: "components/ffrt/src".to_string(),
             rename_output_file: Some(Box::new(|stem| {

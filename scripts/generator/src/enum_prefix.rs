@@ -49,5 +49,8 @@ pub(crate) static ENUM_PREFIX_MAP: LazyLock<HashMap<&'static str, &'static str>>
             // Telephony_RadioTechnology is NOT stripped because variant
             // TEL_RADIO_TECHNOLOGY_1XRTT starts with a digit after prefix removal.
             ("Telephony_NsaState", "TEL_NSA_STATE_"),
+            ("Bluetooth_SwitchState", "BLUETOOTH_STATE_"),
+            ("Bluetooth_ResultCode", "BLUETOOTH_"),
+            ("Wifi_ResultCode", "WIFI_"),
         ])
     });
