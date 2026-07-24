@@ -44,5 +44,10 @@ pub(crate) static ENUM_PREFIX_MAP: LazyLock<HashMap<&'static str, &'static str>>
             ("WindowManager_WindowType", "WINDOW_MANAGER_WINDOW_TYPE_"),
             ("OH_Crypto_ErrCode", "CRYPTO_"),
             ("OH_QoS_GewuErrorCode", "OH_QOS_GEWU_"),
+            ("Telephony_RadioResult", "TEL_RADIO_"),
+            ("Telephony_RegState", "TEL_REG_STATE_"),
+            // Telephony_RadioTechnology is NOT stripped because variant
+            // TEL_RADIO_TECHNOLOGY_1XRTT starts with a digit after prefix removal.
+            ("Telephony_NsaState", "TEL_NSA_STATE_"),
         ])
     });

@@ -494,6 +494,53 @@ pub(crate) fn get_bindings_config(_api_version: u32) -> Vec<BindingConf> {
             }),
         },
         BindingConf {
+            include_filename: "DataProtectionKit/dlp_permission_api.h".to_string(),
+            output_prefix: "components/DataProtectionKit/src/dataprotectionkit".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .newtype_enum("^DLP_ErrCode$")
+                    .newtype_enum("^DLP_FileAccess$")
+                    .allowlist_file(r".*/DataProtectionKit/dlp_permission_api\.h")
+                    .blocklist_file(r".*/native_effect/effect_filter\.h")
+                    .blocklist_file(r".*/native_effect/effect_types\.h")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+            }),
+        },
+        BindingConf {
+            include_filename: "telephony/cellular_data/telephony_data.h".to_string(),
+            output_prefix: "components/telephony/src/telephony_data".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .newtype_enum("^Telephony_RadioResult$")
+                    .newtype_enum("^Telephony_RegState$")
+                    .newtype_enum("^Telephony_RadioTechnology$")
+                    .newtype_enum("^Telephony_NsaState$")
+                    .allowlist_file(r".*/telephony/cellular_data/telephony_data\.h")
+                    .blocklist_file(r".*/native_effect/effect_filter\.h")
+                    .blocklist_file(r".*/native_effect/effect_types\.h")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+            }),
+        },
+        BindingConf {
+            include_filename: "telephony/core_service/telephony_radio.h".to_string(),
+            output_prefix: "components/telephony/src/telephony_radio".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .newtype_enum("^Telephony_RadioResult$")
+                    .newtype_enum("^Telephony_RegState$")
+                    .newtype_enum("^Telephony_RadioTechnology$")
+                    .newtype_enum("^Telephony_NsaState$")
+                    .allowlist_file(r".*/telephony/core_service/telephony_radio\.h")
+                    .allowlist_file(r".*/telephony/core_service/telephony_radio_type\.h")
+                    .blocklist_file(r".*/native_effect/effect_filter\.h")
+                    .blocklist_file(r".*/native_effect/effect_types\.h")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+            }),
+        },
+        BindingConf {
             include_filename: "multimedia/image_effect/image_effect.h".to_string(),
             output_prefix: "components/multimedia/image_effect/src/image_effect".to_string(),
             set_builder_opts: Box::new(|builder| {
@@ -525,6 +572,27 @@ pub(crate) fn get_bindings_config(_api_version: u32) -> Vec<BindingConf> {
                     .raw_line("#[cfg(feature = \"api-12\")]")
                     .raw_line("#[cfg_attr(docsrs, doc(cfg(feature = \"api-12\")))]")
                     .raw_line("pub struct OH_PictureNative;")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+            }),
+        },
+        BindingConf {
+            include_filename: "usb/usb_ddk_api.h".to_string(),
+            output_prefix: "components/usb/src/usb".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .allowlist_file(r".*/usb/usb_ddk_api\.h")
+                    .allowlist_file(r".*/usb/usb_ddk_types\.h")
+                    .allowlist_file(r".*/ddk/ddk_types\.h")
+                    .blocklist_file(r".*/native_effect/effect_filter\.h")
+                    .blocklist_file(r".*/native_effect/effect_types\.h")
+                    .blocklist_type("^DDK_Ashmem$")
+                    .blocklist_type("^DDK_RetCode$")
+                    .newtype_enum("^UsbDdkErrCode$")
+                    .raw_line("#![allow(clippy::deprecated_semver)]")
+                    .raw_line("#[cfg(feature = \"api-12\")]")
+                    .raw_line("#[cfg_attr(docsrs, doc(cfg(feature = \"api-12\")))]")
+                    .raw_line("pub use ohos_ddk_sys::DDK_Ashmem;")
                     .clang_arg("-include")
                     .clang_arg("stdbool.h")
             }),
