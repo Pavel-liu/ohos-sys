@@ -1,0 +1,40 @@
+[package]
+name = "ohos-neural-network-runtime-sys"
+version = "0.1.0"
+edition = "2021"
+keywords = ["OpenHarmony", "HarmonyOS", "neural", "network", "nnr"]
+license = "Apache-2.0"
+description = "Bindings to the Neural Network Runtime API of OpenHarmony"
+repository = "https://github.com/openharmony-rs/ohos-sys"
+readme = "README.md"
+include = ["/src"]
+
+[dependencies]
+document-features = { version = "0.2", optional = true }
+
+[features]
+default = []
+
+api-10 = []
+api-11 = ["api-10"]
+api-12 = ["api-11"]
+api-13 = ["api-12"]
+api-14 = ["api-13"]
+api-15 = ["api-14"]
+api-16 = ["api-15"]
+api-17 = ["api-16"]
+api-18 = ["api-17"]
+api-19 = ["api-18"]
+api-20 = ["api-19"]
+api-21 = ["api-20"]
+api-22 = ["api-21"]
+api-23 = ["api-22"]
+document-features = ["dep:document-features"]
+
+[lints.clippy]
+deprecated_semver = "allow"
+
+[package.metadata.docs.rs]
+features = ["document-features"]
+targets = ["aarch64-unknown-linux-ohos", "armv7-unknown-linux-ohos", "x86_64-unknown-linux-ohos"]
+all-features = true

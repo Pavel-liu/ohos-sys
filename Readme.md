@@ -17,24 +17,24 @@ already been generated.
 | ConnectivityKit                         |        |           |                           |
 | CryptoArchitectureKit                   | ✅      | 23        | [ohos-crypto-sys]         |
 | DataProtectionKit                       |        |           |                           |
-| GameControllerKit                       |        |           |                           |
+ | GameControllerKit                       | ✅      | 23        | [ohos-gamecontrollerkit-sys] |
 | IPCKit                                  | ✅      | 23        | [ohos-ipckit-sys]         |
 | LocationKit                             | ✅      | 23        | [ohos-locationkit-sys]    |
-| NotificationKit                         |        |           |                           |
+ | NotificationKit                         | ✅      | 23        | [ohos-notificationkit-sys] |
 | TEEKit                                  |        |           |                           |
 | accesstoken                             | ✅      | 23        | [ohos-accesstoken-sys]    |
 | ace/xcomponent                          | ✅      | 23        | [xcomponent-sys]          |
-| ark_runtime                             |        |           |                           |
+| ark_runtime                             | ✅      | 23        | [ohos-ark-runtime-sys]    |
 | arkui                                   | ✅      | 23        | [arkui-sys]               |
 | asset                                   | ✅      | 23        | [ohos-asset-store-sys]    |
-| bundle                                  |        |           |                           |
+| bundle                                  | ✅      | 23        | [ohos-bundle-sys]         |
 | database                                | ✅      | 23        | [ohos-rdb-sys]            |
 | background_process_manager              | ✅      | 23        | [ohos-background-process-manager-sys] |
 | ddk                                     | ✅      | 23        | [ohos-ddk-sys]            |
 | distributedhardware                     |        |           |                           |
 | ffrt                                    |        |           |                           |
 | filemanagement                          |        |           |                           |
-| hiappevent                              |        |           |                           |
+| hiappevent                              | ✅      | 23        | [ohos-hiappevent-sys]     |
 | hicollie                                | ✅      | 23        | [ohos-hicollie-sys]       |
 | hid                                     | ✅      | 23        | [ohos-hid-sys]            |
 | hidebug                                 | ✅      | 23        | [ohos-hidebug-sys]        |
@@ -45,8 +45,8 @@ already been generated.
 | inputmethod                             | ✅      | 23        | [ohos-ime-sys]            |
 | mindspore                               |        |           |                           |
 | multimedia/av_session                   |        |           |                           |
-| multimedia/drm_framework                |        |           |                           |
-| multimedia/image_effect                 |        |           |                           |
+| multimedia/drm_framework                | ✅      | 23        | [ohos-drm-sys]            |
+| multimedia/image_effect                 | ✅      | 23        | [ohos-image-effect-sys]   |
 | multimedia/image_framework              | ✅      | 23        | [ohos-image-kit-sys]      |
 | multimedia/media_library                |        |           |                           |
 | multimedia/player_framework             | ✅      | 23        | [ohos-media-sys]          |
@@ -65,7 +65,7 @@ already been generated.
 | network/netmanager                      | ✅      | 23        | [ohos-netmanager-sys]     |
 | network/netstack                        | ✅      | 23        | [ohos-netstack-sys]       |
 | network/netstack/net_ssl                | ✅      | 23        | [ohos-net-ssl-sys]        |
-| neural_network_runtime                  |        |           |                           |
+| neural_network_runtime                  | ✅      | 23        | [ohos-neural-network-runtime-sys] |
 | ohaudio                                 | ✅      | 23        | [ohaudio-sys]             |
 | ohcamera                                |        |           |                           |
 | Pasteboard                              | ✅      | 23        | [ohos-pasteboard-sys]     |
@@ -128,6 +128,14 @@ already been generated.
 [ohos-scsi-peripheral-sys]: https://docs.rs/ohos-scsi-peripheral-sys/latest/ohos_scsi_peripheral_sys/
 [ohos-transient-task-sys]: https://docs.rs/ohos-transient-task-sys/latest/ohos_transient_task_sys/
 [ohos-usb-serial-sys]: https://docs.rs/ohos-usb-serial-sys/latest/ohos_usb_serial_sys/
+[ohos-ark-runtime-sys]: https://docs.rs/ohos-ark-runtime-sys/latest/ohos_ark_runtime_sys/
+[ohos-bundle-sys]: https://docs.rs/ohos-bundle-sys/latest/ohos_bundle_sys/
+[ohos-hiappevent-sys]: https://docs.rs/ohos-hiappevent-sys/latest/ohos_hiappevent_sys/
+[ohos-neural-network-runtime-sys]: https://docs.rs/ohos-neural-network-runtime-sys/latest/ohos_neural_network_runtime_sys/
+[ohos-notificationkit-sys]: https://docs.rs/ohos-notificationkit-sys/latest/ohos_notificationkit_sys/
+[ohos-gamecontrollerkit-sys]: https://docs.rs/ohos-gamecontrollerkit-sys/latest/ohos_gamecontrollerkit_sys/
+[ohos-drm-sys]: https://docs.rs/ohos-drm-sys/latest/ohos_drm_sys/
+[ohos-image-effect-sys]: https://docs.rs/ohos-image-effect-sys/latest/ohos_image_effect_sys/
 
 
 ## Development

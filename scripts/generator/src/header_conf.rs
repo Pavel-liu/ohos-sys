@@ -378,5 +378,156 @@ pub(crate) fn get_bindings_config(_api_version: u32) -> Vec<BindingConf> {
                     .clang_arg("stdbool.h")
             }),
         },
+        BindingConf {
+            include_filename: "ark_runtime/jsvm.h".to_string(),
+            output_prefix: "components/ark_runtime/src/jsvm".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .allowlist_file(r".*/ark_runtime/jsvm\.h")
+                    .allowlist_file(r".*/ark_runtime/jsvm_types\.h")
+                    .blocklist_file(r".*/native_effect/effect_filter\.h")
+                    .blocklist_file(r".*/native_effect/effect_types\.h")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+            }),
+        },
+        BindingConf {
+            include_filename: "bundle/native_interface_bundle.h".to_string(),
+            output_prefix: "components/bundle/src/bundle".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .allowlist_file(r".*/bundle/native_interface_bundle\.h")
+                    .allowlist_file(r".*/bundle/ability_resource_info\.h")
+                    .allowlist_file(r".*/bundle/bundle_manager_common\.h")
+                    .blocklist_file(r".*/native_effect/effect_filter\.h")
+                    .blocklist_file(r".*/native_effect/effect_types\.h")
+                    .blocklist_type("ArkUI_DrawableDescriptor")
+                    .raw_line("#[cfg(feature = \"api-11\")]")
+                    .raw_line("#[cfg_attr(docsrs, doc(cfg(feature = \"api-11\")))]")
+                    .raw_line("pub struct ArkUI_DrawableDescriptor;")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+            }),
+        },
+        BindingConf {
+            include_filename: "hiappevent/hiappevent.h".to_string(),
+            output_prefix: "components/hiappevent/src/hiappevent".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .allowlist_file(r".*/hiappevent/hiappevent\.h")
+                    .allowlist_file(r".*/hiappevent/hiappevent_cfg\.h")
+                    .allowlist_file(r".*/hiappevent/hiappevent_event\.h")
+                    .allowlist_file(r".*/hiappevent/hiappevent_param\.h")
+                    .blocklist_file(r".*/native_effect/effect_filter\.h")
+                    .blocklist_file(r".*/native_effect/effect_types\.h")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+            }),
+        },
+        BindingConf {
+            include_filename: "neural_network_runtime/neural_network_runtime.h".to_string(),
+            output_prefix: "components/neural_network_runtime/src/neural_network_runtime".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .allowlist_file(r".*/neural_network_runtime/neural_network_runtime\.h")
+                    .allowlist_file(r".*/neural_network_runtime/neural_network_runtime_type\.h")
+                    .allowlist_file(r".*/neural_network_runtime/neural_network_core\.h")
+                    .blocklist_file(r".*/native_effect/effect_filter\.h")
+                    .blocklist_file(r".*/native_effect/effect_types\.h")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+            }),
+        },
+        BindingConf {
+            include_filename: "NotificationKit/notification.h".to_string(),
+            output_prefix: "components/NotificationKit/src/notificationkit".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .allowlist_file(r".*/NotificationKit/notification\.h")
+                    .blocklist_file(r".*/native_effect/effect_filter\.h")
+                    .blocklist_file(r".*/native_effect/effect_types\.h")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+            }),
+        },
+        BindingConf {
+            include_filename: "GameControllerKit/game_controller_type.h".to_string(),
+            output_prefix: "components/GameControllerKit/src/gamecontrollerkit".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .newtype_enum("^GameController_ErrorCode$")
+                    .newtype_enum("^GameDevice_StatusChangedType$")
+                    .newtype_enum("^GameDevice_DeviceType$")
+                    .newtype_enum("^GamePad_AxisSourceType$")
+                    .newtype_enum("^GamePad_Button_ActionType$")
+                    .allowlist_file(r".*/GameControllerKit/game_controller_type\.h")
+                    .allowlist_file(r".*/GameControllerKit/game_device_event\.h")
+                    .allowlist_file(r".*/GameControllerKit/game_device\.h")
+                    .allowlist_file(r".*/GameControllerKit/game_pad\.h")
+                    .allowlist_file(r".*/GameControllerKit/game_pad_event\.h")
+                    .blocklist_file(r".*/native_effect/effect_filter\.h")
+                    .blocklist_file(r".*/native_effect/effect_types\.h")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+            }),
+        },
+        BindingConf {
+            include_filename: "multimedia/drm_framework/native_drm_err.h".to_string(),
+            output_prefix: "components/multimedia/drm_framework/src/drm".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .newtype_enum("^DRM_EventType$")
+                    .newtype_enum("^DRM_ContentProtectionLevel$")
+                    .newtype_enum("^DRM_MediaKeyType$")
+                    .newtype_enum("^DRM_MediaKeyRequestType$")
+                    .newtype_enum("^DRM_OfflineMediaKeyStatus$")
+                    .newtype_enum("^DRM_CertificateStatus$")
+                    .newtype_enum("^Drm_ErrCode$")
+                    .allowlist_file(r".*/multimedia/drm_framework/native_drm_err\.h")
+                    .allowlist_file(r".*/multimedia/drm_framework/native_drm_common\.h")
+                    .allowlist_file(r".*/multimedia/drm_framework/native_mediakeysession\.h")
+                    .allowlist_file(r".*/multimedia/drm_framework/native_mediakeysystem\.h")
+                    .blocklist_file(r".*/native_effect/effect_filter\.h")
+                    .blocklist_file(r".*/native_effect/effect_types\.h")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+            }),
+        },
+        BindingConf {
+            include_filename: "multimedia/image_effect/image_effect.h".to_string(),
+            output_prefix: "components/multimedia/image_effect/src/image_effect".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .newtype_enum("^ImageEffect_ErrorCode$")
+                    .newtype_enum("^ImageEffect_DataType$")
+                    .newtype_enum("^ImageEffect_Format$")
+                    .newtype_enum("^ImageEffect_BufferType$")
+                    .allowlist_file(r".*/multimedia/image_effect/image_effect\.h")
+                    .allowlist_file(r".*/multimedia/image_effect/image_effect_errors\.h")
+                    .allowlist_file(r".*/multimedia/image_effect/image_effect_filter\.h")
+                    .blocklist_type("OH_NativeBuffer")
+                    .blocklist_type("OHNativeWindow")
+                    .blocklist_type("OH_PixelmapNative")
+                    .blocklist_type("OH_PictureNative")
+                    .blocklist_file(r".*/native_buffer/.*\.h")
+                    .blocklist_file(r".*/native_window/.*\.h")
+                    .blocklist_file(r".*/native_effect/effect_filter\.h")
+                    .blocklist_file(r".*/native_effect/effect_types\.h")
+                    .raw_line("#[cfg(feature = \"api-12\")]")
+                    .raw_line("#[cfg_attr(docsrs, doc(cfg(feature = \"api-12\")))]")
+                    .raw_line("pub struct OH_NativeBuffer;")
+                    .raw_line("#[cfg(feature = \"api-12\")]")
+                    .raw_line("#[cfg_attr(docsrs, doc(cfg(feature = \"api-12\")))]")
+                    .raw_line("pub struct OHNativeWindow;")
+                    .raw_line("#[cfg(feature = \"api-12\")]")
+                    .raw_line("#[cfg_attr(docsrs, doc(cfg(feature = \"api-12\")))]")
+                    .raw_line("pub struct OH_PixelmapNative;")
+                    .raw_line("#[cfg(feature = \"api-12\")]")
+                    .raw_line("#[cfg_attr(docsrs, doc(cfg(feature = \"api-12\")))]")
+                    .raw_line("pub struct OH_PictureNative;")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+            }),
+        },
     ]
 }

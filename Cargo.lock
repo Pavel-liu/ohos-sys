@@ -100,6 +100,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "ohos-ark-runtime-sys"
+version = "0.1.0"
+dependencies = [
+ "document-features",
+]
+
+[[package]]
 name = "ohos-asset-store-sys"
 version = "0.1.1"
 dependencies = [
@@ -115,6 +122,13 @@ dependencies = [
 
 [[package]]
 name = "ohos-basic-services-kit-sys"
+version = "0.1.0"
+dependencies = [
+ "document-features",
+]
+
+[[package]]
+name = "ohos-bundle-sys"
 version = "0.1.0"
 dependencies = [
  "document-features",
@@ -150,6 +164,27 @@ dependencies = [
 ]
 
 [[package]]
+name = "ohos-drm-sys"
+version = "0.1.0"
+dependencies = [
+ "document-features",
+]
+
+[[package]]
+name = "ohos-gamecontrollerkit-sys"
+version = "0.1.0"
+dependencies = [
+ "document-features",
+]
+
+[[package]]
+name = "ohos-hiappevent-sys"
+version = "0.1.0"
+dependencies = [
+ "document-features",
+]
+
+[[package]]
 name = "ohos-hicollie-sys"
 version = "0.1.0"
 dependencies = [
@@ -173,6 +208,13 @@ dependencies = [
 [[package]]
 name = "ohos-huks-sys"
 version = "0.1.1"
+dependencies = [
+ "document-features",
+]
+
+[[package]]
+name = "ohos-image-effect-sys"
+version = "0.1.0"
 dependencies = [
  "document-features",
 ]
@@ -271,6 +313,20 @@ dependencies = [
 [[package]]
 name = "ohos-netstack-sys"
 version = "0.1.1"
+dependencies = [
+ "document-features",
+]
+
+[[package]]
+name = "ohos-neural-network-runtime-sys"
+version = "0.1.0"
+dependencies = [
+ "document-features",
+]
+
+[[package]]
+name = "ohos-notificationkit-sys"
+version = "0.1.0"
 dependencies = [
  "document-features",
 ]

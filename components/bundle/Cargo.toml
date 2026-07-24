@@ -1,0 +1,43 @@
+[package]
+name = "ohos-bundle-sys"
+version = "0.1.0"
+edition = "2021"
+keywords = ["OpenHarmony", "HarmonyOS", "bundle", "app", "pack"]
+license = "Apache-2.0"
+description = "Bindings to the Bundle (application bundle management) API of OpenHarmony"
+repository = "https://github.com/openharmony-rs/ohos-sys"
+readme = "README.md"
+include = ["/src"]
+
+[dependencies]
+document-features = { version = "0.2", optional = true }
+
+[features]
+default = []
+
+## No effect. API-10 has no Bundle bindings.
+## The feature exists for internal purposes.
+api-10 = []
+## Enables bindings for OpenHarmony API-level 11. This is the lowest API level
+## at which any Bundle APIs are available — selecting this feature is required to
+## use the application bundle management APIs.
+api-11 = ["api-10"]
+api-12 = ["api-11"]
+api-13 = ["api-12"]
+api-14 = ["api-13"]
+api-15 = ["api-14"]
+api-16 = ["api-15"]
+api-17 = ["api-16"]
+api-18 = ["api-17"]
+api-19 = ["api-18"]
+api-20 = ["api-19"]
+api-21 = ["api-20"]
+api-22 = ["api-21"]
+api-23 = ["api-22"]
+## Document available features when building the documentation
+document-features = ["dep:document-features"]
+
+[package.metadata.docs.rs]
+features = ["document-features"]
+targets = ["aarch64-unknown-linux-ohos", "armv7-unknown-linux-ohos", "x86_64-unknown-linux-ohos"]
+all-features = true
