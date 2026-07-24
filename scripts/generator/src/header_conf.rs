@@ -229,5 +229,20 @@ pub(crate) fn get_bindings_config(_api_version: u32) -> Vec<BindingConf> {
                     .clang_arg("stdbool.h")
             }),
         },
+        BindingConf {
+            include_filename: "hicollie/hicollie.h".to_string(),
+            output_prefix: "components/hicollie/src/hicollie".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .newtype_enum("^HiCollie_ErrorCode$")
+                    .newtype_enum("^HiCollie_Flag$")
+                    .allowlist_file(r".*/hicollie/hicollie\.h")
+                    .blocklist_type("timespec")
+                    .blocklist_var("CLOCK_.*")
+                    .raw_line("pub type timespec = ::core::ffi::c_long;")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+            }),
+        },
     ]
 }
