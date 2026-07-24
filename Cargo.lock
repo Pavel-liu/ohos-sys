@@ -419,6 +419,7 @@ dependencies = [
  "ohos-abilitykit-sys",
  "ohos-accesstoken-sys",
  "ohos-asset-store-sys",
+ "ohos-background-process-manager-sys",
  "ohos-basic-services-kit-sys",
  "ohos-connectivitykit-sys",
  "ohos-crypto-sys",
