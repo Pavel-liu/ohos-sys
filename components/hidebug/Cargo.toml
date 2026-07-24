@@ -32,9 +32,17 @@ api-16 = ["api-15"]
 api-17 = ["api-16"]
 api-18 = ["api-17"]
 api-19 = ["api-18"]
+## Enables bindings for OpenHarmony API-level 20, which adds MallocDispatch,
+## backtrace, symbolic address, and cached native memory APIs.
 api-20 = ["api-19"]
+## Enables bindings for OpenHarmony API-level 21, which adds
+## `OH_HiDebug_GetGraphicsMemorySummary`.
 api-21 = ["api-20"]
+## Enables bindings for OpenHarmony API-level 22, which adds
+## `OH_HiDebug_RequestThreadLiteSampling`.
 api-22 = ["api-21"]
+## Enables bindings for OpenHarmony API-level 23, which adds
+## crash object attachment APIs.
 api-23 = ["api-22"]
 ## Document available features when building the documentation
 document-features = ["dep:document-features"]

@@ -427,6 +427,7 @@ dependencies = [
  "ohos-drawing-sys",
  "ohos-ffrt-sys",
  "ohos-filemanagement-sys",
+ "ohos-hidebug-sys",
  "ohos-huks-sys",
  "ohos-image-kit-sys",
  "ohos-ime-sys",

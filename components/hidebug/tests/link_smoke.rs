@@ -1,36 +1,30 @@
-use std::ptr;
-
-use hidebug_sys as hidebug;
+use ohos_hidebug_sys as hidebug;
 
 #[test]
 fn link_smoke() {
-    unsafe {
-        let _ = hidebug::OH_HiDebug_GetSystemCpuUsage();
-    }
+    let _f: unsafe extern "C" fn() -> f64 = hidebug::OH_HiDebug_GetSystemCpuUsage;
 }
 
 #[cfg(feature = "api-20")]
 #[test]
 fn link_smoke_api20() {
-    unsafe {
-        let _ = hidebug::OH_HiDebug_CreateBacktraceObject();
-    }
+    let _f: unsafe extern "C" fn() -> hidebug::HiDebug_Backtrace_Object =
+        hidebug::OH_HiDebug_CreateBacktraceObject;
 }
 
 #[cfg(feature = "api-22")]
 #[test]
 fn link_smoke_api22() {
-    let _ = hidebug::HiDebug_ProcessSamplerConfig {
-        tids: ptr::null_mut(),
-        size: 0,
-        frequency: 0,
-        duration: 0,
-        reserved: 0,
-    };
+    let _f: unsafe extern "C" fn(
+        *mut hidebug::HiDebug_ProcessSamplerConfig,
+        hidebug::OH_HiDebug_ThreadLiteSamplingCallback,
+    ) -> hidebug::HiDebug_ErrorCode = hidebug::OH_HiDebug_RequestThreadLiteSampling;
 }
 
 #[cfg(feature = "api-23")]
 #[test]
 fn link_smoke_api23() {
-    let _ = hidebug::HiDebug_CrashObjType::HIDEBUG_CRASHOBJ_STRING;
+    let _set: unsafe extern "C" fn(hidebug::HiDebug_CrashObjType, *mut core::ffi::c_void) -> u64 =
+        hidebug::OH_HiDebug_SetCrashObj;
+    let _reset: unsafe extern "C" fn(u64) = hidebug::OH_HiDebug_ResetCrashObj;
 }
