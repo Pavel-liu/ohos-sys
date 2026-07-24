@@ -1315,5 +1315,57 @@ pub(crate) fn get_module_bindings_config() -> Vec<DirBindingsConf> {
             }),
             ..Default::default()
         },
+        DirBindingsConf {
+            directory: "ffrt".to_string(),
+            output_dir: "components/ffrt/src".to_string(),
+            rename_output_file: Some(Box::new(|stem| {
+                // "loop" is a Rust keyword; rename to "ffrt_loop"
+                if stem == "loop" {
+                    "ffrt_loop".to_string()
+                } else {
+                    stem.to_string()
+                }
+            })),
+            set_builder_opts: Box::new(|file_stem, header_path, builder| {
+                let builder = builder
+                    .allowlist_file(header_path.to_str().unwrap())
+                    .blocklist_file(r".*/native_effect/effect_filter\.h")
+                    .blocklist_file(r".*/native_effect/effect_types\.h")
+                    .blocklist_type("timespec")
+                    .newtype_enum("^ffrt_queue_priority_t$")
+                    .newtype_enum("^ffrt_qos_default_t$")
+                    .newtype_enum("^ffrt_storage_size_t$")
+                    .newtype_enum("^ffrt_function_kind_t$")
+                    .newtype_enum("^ffrt_dependence_type_t$")
+                    .newtype_enum("^ffrt_error_t$")
+                    .newtype_enum("^ffrt_mutex_type$")
+                    .newtype_enum("^ffrt_queue_type_t$")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+                    .clang_arg("-include")
+                    .clang_arg("stddef.h");
+                // file_stem is already the renamed version
+                match file_stem {
+                    "task" => builder.raw_line("use crate::type_def::*;"),
+                    "mutex" => builder.raw_line("use crate::type_def::*;"),
+                    "condition_variable" => builder
+                        .raw_line("use crate::type_def::*;")
+                        .raw_line("#[repr(C)]")
+                        .raw_line("pub struct timespec { pub tv_sec: ::core::ffi::c_long, pub tv_nsec: ::core::ffi::c_long, }"),
+                    "queue" => builder
+                        .raw_line("#![allow(clippy::deprecated_semver)]")
+                        .raw_line("use crate::type_def::*;"),
+                    "sleep" => builder.raw_line("use crate::type_def::*;"),
+                    "ffrt_loop" => builder
+                        .raw_line("use crate::type_def::*;")
+                        .raw_line("use crate::queue::*;"),
+                    "timer" => builder.raw_line("use crate::type_def::*;"),
+                    "shared_mutex" => builder.raw_line("use crate::type_def::*;"),
+                    "fiber" => builder.raw_line("use crate::type_def::*;"),
+                    _ => builder,
+                }
+            }),
+            ..Default::default()
+        },
     ]
 }

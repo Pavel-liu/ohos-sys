@@ -16,7 +16,7 @@ already been generated.
 | Background Process Manager              |        |           |                           |
 | ConnectivityKit                         |        |           |                           |
 | CryptoArchitectureKit                   | ✅      | 23        | [ohos-crypto-sys]         |
-| DataProtectionKit                       |        |           |                           |
+| DataProtectionKit                       | ✅      | 23        | [ohos-dataprotectionkit-sys] |
  | GameControllerKit                       | ✅      | 23        | [ohos-gamecontrollerkit-sys] |
 | IPCKit                                  | ✅      | 23        | [ohos-ipckit-sys]         |
 | LocationKit                             | ✅      | 23        | [ohos-locationkit-sys]    |
@@ -32,7 +32,7 @@ already been generated.
 | background_process_manager              | ✅      | 23        | [ohos-background-process-manager-sys] |
 | ddk                                     | ✅      | 23        | [ohos-ddk-sys]            |
 | distributedhardware                     |        |           |                           |
-| ffrt                                    |        |           |                           |
+| ffrt                                    | ✅      | 23        | [ohos-ffrt-sys]           |
 | filemanagement                          |        |           |                           |
 | hiappevent                              | ✅      | 23        | [ohos-hiappevent-sys]     |
 | hicollie                                | ✅      | 23        | [ohos-hicollie-sys]       |
@@ -75,10 +75,10 @@ already been generated.
 | resourcemanager                         |        |           |                           |
 | sensors                                 | ✅      | 23        | [ohos-sensors-sys]        |
 | SCSI Peripherals                        | ✅      | 23        | [ohos-scsi-peripheral-sys] |
-| telephony                               |        |           |                           |
+| telephony                               | ✅      | 23        | [ohos-telephony-sys]      |
 | transient_task                          | ✅      | 23        | [ohos-transient-task-sys] |
 | Unified Data Management Framework(UDMF) | ✅      | 23        | [udmf-sys]                |
-| usb                                     |        |           |                           |
+| usb                                     | ✅      | 23        | [ohos-usb-sys]            |
 | usb serial                              | ✅      | 23        | [ohos-usb-serial-sys]     |
 | web                                     | ✅      | 23        | [arkweb-sys]            |
 | window_manager                          | ✅      | 23        | [ohos-window-manager-sys] |
@@ -136,6 +136,10 @@ already been generated.
 [ohos-gamecontrollerkit-sys]: https://docs.rs/ohos-gamecontrollerkit-sys/latest/ohos_gamecontrollerkit_sys/
 [ohos-drm-sys]: https://docs.rs/ohos-drm-sys/latest/ohos_drm_sys/
 [ohos-image-effect-sys]: https://docs.rs/ohos-image-effect-sys/latest/ohos_image_effect_sys/
+[ohos-dataprotectionkit-sys]: https://docs.rs/ohos-dataprotectionkit-sys/latest/ohos_dataprotectionkit_sys/
+[ohos-telephony-sys]: https://docs.rs/ohos-telephony-sys/latest/ohos_telephony_sys/
+[ohos-usb-sys]: https://docs.rs/ohos-usb-sys/latest/ohos_usb_sys/
+[ohos-ffrt-sys]: https://docs.rs/ohos-ffrt-sys/latest/ohos_ffrt_sys/
 
 
 ## Development

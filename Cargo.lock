@@ -178,6 +178,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "ohos-ffrt-sys"
+version = "0.1.0"
+dependencies = [
+ "document-features",
+]
+
+[[package]]
 name = "ohos-gamecontrollerkit-sys"
 version = "0.1.0"
 dependencies = [
@@ -401,6 +408,7 @@ dependencies = [
  "ohos-dataprotectionkit-sys",
  "ohos-deviceinfo-sys",
  "ohos-drawing-sys",
+ "ohos-ffrt-sys",
  "ohos-huks-sys",
  "ohos-image-kit-sys",
  "ohos-ime-sys",

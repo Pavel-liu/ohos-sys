@@ -1,0 +1,55 @@
+[package]
+name = "ohos-ffrt-sys"
+version = "0.1.0"
+edition = "2021"
+keywords = ["OpenHarmony", "HarmonyOS", "ffrt", "concurrency", "runtime"]
+license = "Apache-2.0"
+description = "Bindings to the FFRT (Function Flow Runtime) C API of OpenHarmony"
+repository = "https://github.com/openharmony-rs/ohos-sys"
+readme = "README.md"
+include = ["/src"]
+
+[dependencies]
+document-features = { version = "0.2", optional = true }
+
+[features]
+default = []
+
+## Enables bindings for OpenHarmony API-level 10. This is the lowest API level
+## at which the core FFRT APIs are available — selecting this feature is required to
+## use the FFRT task submission, mutex, condition variable, queue, and sleep APIs.
+api-10 = []
+## Enables bindings for OpenHarmony API-level 11
+api-11 = ["api-10"]
+## Enables bindings for OpenHarmony API-level 12, adding queue priority,
+## task stack size, loop, timer, poller, and mutex attribute APIs.
+api-12 = ["api-11"]
+## Enables bindings for OpenHarmony API-level 13
+api-13 = ["api-12"]
+## Enables bindings for OpenHarmony API-level 14
+api-14 = ["api-13"]
+## Enables bindings for OpenHarmony API-level 15
+api-15 = ["api-14"]
+## Enables bindings for OpenHarmony API-level 16
+api-16 = ["api-15"]
+## Enables bindings for OpenHarmony API-level 17
+api-17 = ["api-16"]
+## Enables bindings for OpenHarmony API-level 18, adding shared mutex (rwlock) APIs.
+api-18 = ["api-17"]
+## Enables bindings for OpenHarmony API-level 19
+api-19 = ["api-18"]
+## Enables bindings for OpenHarmony API-level 20, adding fiber APIs.
+api-20 = ["api-19"]
+## Enables bindings for OpenHarmony API-level 21
+api-21 = ["api-20"]
+## Enables bindings for OpenHarmony API-level 22
+api-22 = ["api-21"]
+## Enables bindings for OpenHarmony API-level 23
+api-23 = ["api-22"]
+## Document available features when building the documentation
+document-features = ["dep:document-features"]
+
+[package.metadata.docs.rs]
+features = ["document-features"]
+targets = ["aarch64-unknown-linux-ohos", "armv7-unknown-linux-ohos", "x86_64-unknown-linux-ohos"]
+all-features = true

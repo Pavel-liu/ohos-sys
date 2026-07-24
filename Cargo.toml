@@ -57,6 +57,7 @@ ohos-rdb-sys = { version = "0.1.0", optional = true, path = "components/rdb" }
 ohos-sensors-sys = { version = "0.1.1", optional = true, path = "components/sensors" }
 ohos-dataprotectionkit-sys = { version = "0.1.0", optional = true, path = "components/DataProtectionKit" }
 ohos-telephony-sys = { version = "0.1.0", optional = true, path = "components/telephony" }
+ohos-ffrt-sys = { version = "0.1.0", optional = true, path = "components/ffrt" }
 ohos-sys-opaque-types = { workspace = true }
 ohos-window-sys = { version = "0.1.7", optional = true, path = "components/window" }
 ohos-vsync-sys = { version = "0.1.6", optional = true, path = "components/vsync" }
@@ -154,6 +155,8 @@ sensors = ["dep:ohos-sensors-sys"]
 dataprotectionkit = ["dep:ohos-dataprotectionkit-sys"]
 ## Enables bindings to the TelephonyKit (cellular data + radio) API. Re-exports `ohos-telephony-sys`.
 telephony = ["dep:ohos-telephony-sys"]
+## Enables bindings to the FFRT (Function Flow Runtime) API. Re-exports `ohos-ffrt-sys`.
+ffrt = ["dep:ohos-ffrt-sys"]
 ## Enables bindings to the Unified Data Management Framework (UDMF)
 udmf = ['dep:udmf-sys']
 ## Enables bindings to `native_vsync`
@@ -216,6 +219,7 @@ all-components = [
     "vsync",
     "web",
     "window_manager",
+    "ffrt",
 ]
 
 #! ### OpenHarmony API level
@@ -224,7 +228,7 @@ all-components = [
 #! OpenHarmony versions.
 
 ## No effect. API-10 bindings can't be deselected. The feature exists for internal purposes.
-api-10 = ["ohos-media-sys?/api-10"]
+api-10 = ["ohos-media-sys?/api-10", "ohos-ffrt-sys?/api-10"]
 ## Enables bindings for OpenHarmony API-level 11
 api-11 = [
     "api-10",
@@ -247,6 +251,7 @@ api-11 = [
     "ohos-sensors-sys?/api-11",
     "udmf-sys?/api-11",
     "xcomponent-sys?/api-11",
+    "ohos-ffrt-sys?/api-11",
 ]
 ## Enables bindings for OpenHarmony API-level 12
 api-12 = [
@@ -284,6 +289,7 @@ api-12 = [
     "ohos-window-manager-sys?/api-12",
     "udmf-sys?/api-12",
     "xcomponent-sys?/api-12",
+    "ohos-ffrt-sys?/api-12",
 ]
 
 ## Enables bindings for OpenHarmony API-level 13
@@ -323,6 +329,7 @@ api-13 = [
     "ohos-window-manager-sys?/api-13",
     "udmf-sys?/api-13",
     "xcomponent-sys?/api-13",
+    "ohos-ffrt-sys?/api-13",
 ]
 
 ## Enables bindings for OpenHarmony API-level 14
@@ -363,6 +370,7 @@ api-14 = [
     "ohos-window-sys?/api-14",
     "udmf-sys?/api-14",
     "xcomponent-sys?/api-14",
+    "ohos-ffrt-sys?/api-14",
 ]
 
 ## Enables bindings for OpenHarmony API-level 15
@@ -403,6 +411,7 @@ api-15 = [
     "ohos-window-sys?/api-15",
     "udmf-sys?/api-15",
     "xcomponent-sys?/api-15",
+    "ohos-ffrt-sys?/api-15",
 ]
 
 ## Enables bindings for OpenHarmony API-level 16.
@@ -442,6 +451,7 @@ api-16 = ["api-15",
     "ohos-window-sys?/api-16",
     "udmf-sys?/api-16",
     "xcomponent-sys?/api-16",
+    "ohos-ffrt-sys?/api-16",
 ]
 ## Enables bindings for OpenHarmony API-level 17.
 api-17 = ["api-16",
@@ -480,6 +490,7 @@ api-17 = ["api-16",
     "ohos-window-sys?/api-17",
     "udmf-sys?/api-17",
     "xcomponent-sys?/api-17",
+    "ohos-ffrt-sys?/api-17",
 ]
 ## Enables bindings for OpenHarmony API-level 18 (5.1.0).
 api-18 = ["api-17",
@@ -518,6 +529,7 @@ api-18 = ["api-17",
     "ohos-window-sys?/api-18",
     "udmf-sys?/api-18",
     "xcomponent-sys?/api-18",
+    "ohos-ffrt-sys?/api-18",
 ]
 ## Enables bindings for OpenHarmony API-level 19
 api-19 = ["api-18",
@@ -556,6 +568,7 @@ api-19 = ["api-18",
     "ohos-window-sys?/api-19",
     "udmf-sys?/api-19",
     "xcomponent-sys?/api-19",
+    "ohos-ffrt-sys?/api-19",
 ]
 ## Enables bindings for OpenHarmony API-level 20
 api-20 = ["api-19",
@@ -594,6 +607,7 @@ api-20 = ["api-19",
     "ohos-window-sys?/api-20",
     "udmf-sys?/api-20",
     "xcomponent-sys?/api-20",
+    "ohos-ffrt-sys?/api-20",
 ]
 ## Enables bindings for OpenHarmony API-level 21
 api-21 = ["api-20",
@@ -632,6 +646,7 @@ api-21 = ["api-20",
     "ohos-window-sys?/api-21",
     "udmf-sys?/api-21",
     "xcomponent-sys?/api-21",
+    "ohos-ffrt-sys?/api-21",
 ]
 ## Enables bindings for OpenHarmony API-level 22
 api-22 = ["api-21",
@@ -670,6 +685,7 @@ api-22 = ["api-21",
     "ohos-window-sys?/api-22",
     "udmf-sys?/api-22",
     "xcomponent-sys?/api-22",
+    "ohos-ffrt-sys?/api-22",
 ]
 ## Enables bindings for OpenHarmony API-level 23
 api-23 = ["api-22",
@@ -708,6 +724,7 @@ api-23 = ["api-22",
     "ohos-window-sys?/api-23",
     "udmf-sys?/api-23",
     "xcomponent-sys?/api-23",
+    "ohos-ffrt-sys?/api-23",
 ]
 
 #! ### Features of dependencies

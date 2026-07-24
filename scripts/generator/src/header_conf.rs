@@ -597,5 +597,6 @@ pub(crate) fn get_bindings_config(_api_version: u32) -> Vec<BindingConf> {
                     .clang_arg("stdbool.h")
             }),
         },
+
     ]
 }
