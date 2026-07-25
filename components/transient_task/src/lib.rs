@@ -11,7 +11,7 @@
 #![cfg_attr(docsrs, feature(doc_cfg))]
 
 #[cfg(feature = "api-11")]
-#[link(name = "transient_task.z")]
+#[link(name = "transient_task")]
 unsafe extern "C" {}
 
 #[cfg(feature = "api-11")]
