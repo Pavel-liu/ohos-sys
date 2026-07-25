@@ -163,6 +163,10 @@ pub use ohos_window_manager_sys as window_manager;
 #[cfg_attr(docsrs, doc(cfg(feature = "dataprotectionkit")))]
 pub use ohos_dataprotectionkit_sys as dataprotectionkit;
 
+#[cfg(feature = "device-certificate")]
+#[cfg_attr(docsrs, doc(cfg(feature = "device-certificate")))]
+pub use ohos_device_certificate_sys as device_certificate;
+
 #[cfg(feature = "telephony")]
 #[cfg_attr(docsrs, doc(cfg(feature = "telephony")))]
 pub use ohos_telephony_sys as telephony;

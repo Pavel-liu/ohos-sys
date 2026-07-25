@@ -230,6 +230,17 @@ pub(crate) fn get_bindings_config(_api_version: u32) -> Vec<BindingConf> {
             }),
         },
         BindingConf {
+            include_filename: "device_certificate/certmanager/cm_native_api.h".to_string(),
+            output_prefix: "components/device_certificate/src/device_certificate".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .newtype_enum("^OH_CM_ErrorCode$")
+                    .newtype_enum("^OH_CM_CertificatePurpose$")
+                    .allowlist_file(r".*/device_certificate/certmanager/cm_native_type\.h")
+                    .allowlist_file(r".*/device_certificate/certmanager/cm_native_api\.h")
+            }),
+        },
+        BindingConf {
             include_filename: "hicollie/hicollie.h".to_string(),
             output_prefix: "components/hicollie/src/hicollie".to_string(),
             set_builder_opts: Box::new(|builder| {

@@ -171,6 +171,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "ohos-device-certificate-sys"
+version = "0.1.0"
+dependencies = [
+ "document-features",
+]
+
+[[package]]
 name = "ohos-deviceinfo-sys"
 version = "0.1.7"
 dependencies = [
@@ -493,6 +500,7 @@ dependencies = [
  "ohos-crypto-sys",
  "ohos-dataprotectionkit-sys",
  "ohos-ddk-sys",
+ "ohos-device-certificate-sys",
  "ohos-deviceinfo-sys",
  "ohos-distributedhardware-sys",
  "ohos-drawing-sys",

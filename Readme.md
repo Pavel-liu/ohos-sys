@@ -17,6 +17,7 @@ already been generated.
  | ConnectivityKit                       | ✅      | 23        | [ohos-connectivitykit-sys] |
 | CryptoArchitectureKit                   | ✅      | 23        | [ohos-crypto-sys]         |
 | DataProtectionKit                       | ✅      | 23        | [ohos-dataprotectionkit-sys] |
+| DeviceCertificateKit                    | ✅      | 23        | [ohos-device-certificate-sys] |
  | GameControllerKit                       | ✅      | 23        | [ohos-gamecontrollerkit-sys] |
 | IPCKit                                  | ✅      | 23        | [ohos-ipckit-sys]         |
 | LocationKit                             | ✅      | 23        | [ohos-locationkit-sys]    |
@@ -139,6 +140,7 @@ already been generated.
 [ohos-drm-sys]: https://docs.rs/ohos-drm-sys/latest/ohos_drm_sys/
 [ohos-image-effect-sys]: https://docs.rs/ohos-image-effect-sys/latest/ohos_image_effect_sys/
 [ohos-dataprotectionkit-sys]: https://docs.rs/ohos-dataprotectionkit-sys/latest/ohos_dataprotectionkit_sys/
+[ohos-device-certificate-sys]: https://docs.rs/ohos-device-certificate-sys/latest/ohos_device_certificate_sys/
 [ohos-telephony-sys]: https://docs.rs/ohos-telephony-sys/latest/ohos_telephony_sys/
 [ohos-usb-sys]: https://docs.rs/ohos-usb-sys/latest/ohos_usb_sys/
 [ohos-ffrt-sys]: https://docs.rs/ohos-ffrt-sys/latest/ohos_ffrt_sys/
