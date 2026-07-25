@@ -616,6 +616,9 @@ pub(crate) fn get_bindings_config(_api_version: u32) -> Vec<BindingConf> {
                     .newtype_enum("^DeviceManager_ErrorCode$")
                     .allowlist_file(r".*/distributedhardware/device_manager/oh_device_manager\.h")
                     .allowlist_file(r".*/distributedhardware/device_manager/oh_device_manager_err_code\.h")
+                    // DeviceManager declares result constants in the companion error-code
+                    // header and uses C++-only SDK headers, so keep both the forced include
+                    // and C++ parsing mode in sync with generated bindings.
                     .clang_args(["-include", "distributedhardware/device_manager/oh_device_manager_err_code.h"])
                     .clang_args(["-x", "c++"])
             }),
@@ -642,16 +645,21 @@ pub(crate) fn get_bindings_config(_api_version: u32) -> Vec<BindingConf> {
                     .newtype_enum("^ScreenDensity$")
                     .allowlist_file(r".*/resourcemanager/ohresmgr\.h")
                     .allowlist_file(r".*/resourcemanager/resmgr_common\.h")
+                    // Keep ResourceManager scoped to localization resources: rawfile and
+                    // ArkUI drawable descriptor headers are owned by their dedicated crates.
                     .blocklist_file(r".*/rawfile/.*\.h")
                     .blocklist_file(r".*/arkui/drawable_descriptor\.h")
                     .blocklist_type("^NativeResourceManager$")
                     .blocklist_type("^ArkUI_DrawableDescriptor$")
+                    // These opaque handles cross crate boundaries; emit local empty enums
+                    // instead of pulling rawfile/ArkUI bindings into this module.
                     .raw_line("#[cfg(feature = \"api-12\")]")
                     .raw_line("#[cfg_attr(docsrs, doc(cfg(feature = \"api-12\")))]")
                     .raw_line("pub enum NativeResourceManager {}")
                     .raw_line("#[cfg(feature = \"api-12\")]")
                     .raw_line("#[cfg_attr(docsrs, doc(cfg(feature = \"api-12\")))]")
                     .raw_line("pub enum ArkUI_DrawableDescriptor {}")
+                    // The SDK headers include C++ constructs even for C ABI exports.
                     .clang_args(["-x", "c++"])
             }),
         },

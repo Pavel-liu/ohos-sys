@@ -11,6 +11,11 @@ C API reference:
 - [`oh_device_manager.h` reference](https://docs.openharmony.cn/pages/v5.0/en/application-dev/reference/apis-distributedservice-kit/capi-oh-device-manager-h.md)
 - [`oh_device_manager_err_code.h` reference](https://docs.openharmony.cn/pages/v5.0/en/application-dev/reference/apis-distributedservice-kit/capi-oh-device-manager-err-code-h.md)
 
+## Ownership and privacy notes
+
+- `OH_DeviceManager_GetLocalDeviceName` writes an SDK-allocated C string. The caller owns the returned buffer and must release it according to the OpenHarmony DeviceManager C API contract.
+- The local device name may contain user-visible device identity information. Treat it as private data and avoid logging or exporting it without user consent.
+
 ## License
 
 Licensed under the Apache-2.0 license, matching the license of OpenHarmony.

@@ -7,7 +7,7 @@ license = "Apache-2.0"
 description = "Bindings to the ResourceManager API of OpenHarmony"
 repository = "https://github.com/openharmony-rs/ohos-sys"
 readme = "README.md"
-include = ["/src"]
+include = ["/src", "/README.md"]
 
 [dependencies]
 document-features = { version = "0.2", optional = true }

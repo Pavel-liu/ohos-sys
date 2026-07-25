@@ -5,6 +5,8 @@ fn link_smoke_api_20() {
         ohos_native_fence_sys::OH_NativeFence_IsValid;
     let _wait: unsafe extern "C" fn(core::ffi::c_int, u32) -> bool =
         ohos_native_fence_sys::OH_NativeFence_Wait;
+    let _wait_forever: unsafe extern "C" fn(core::ffi::c_int) -> bool =
+        ohos_native_fence_sys::OH_NativeFence_WaitForever;
     let _close: unsafe extern "C" fn(core::ffi::c_int) =
         ohos_native_fence_sys::OH_NativeFence_Close;
 }

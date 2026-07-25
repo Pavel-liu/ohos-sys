@@ -32,7 +32,8 @@ api-21 = ["api-20"]
 ## Enables bindings for OpenHarmony API-level 22. This is the lowest API level
 ## at which OHAudioSuite APIs are available.
 api-22 = ["api-21"]
-## Enables bindings for OpenHarmony API-level 23.
+## Enables bindings for OpenHarmony API-level 23, including space render,
+## tempo/pitch, and voice-change node APIs.
 api-23 = ["api-22"]
 ## Document available features when building the documentation.
 document-features = ["dep:document-features"]

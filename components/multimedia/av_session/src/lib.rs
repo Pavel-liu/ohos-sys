@@ -1,8 +1,10 @@
-//! AVSessionKit bindings for OpenHarmony.
+//! `AVSessionKit` bindings for `OpenHarmony`.
 //!
 //! This crate exposes raw C ABI bindings generated from
 //! `multimedia/av_session/native_*.h`. It does not provide safe wrappers around
 //! native session handles or callback registration.
+//!
+//! Official `AVSessionKit` C API reference: <https://docs.openharmony.cn/pages/v5.0/en/application-dev/reference/apis-avsession-kit/capi-avsession.md>.
 //!
 //! ## Feature flags
 #![cfg_attr(
@@ -10,6 +12,10 @@
     cfg_attr(doc, doc = ::document_features::document_features!())
 )]
 #![cfg_attr(docsrs, feature(doc_cfg))]
+
+#[cfg(feature = "api-13")]
+#[link(name = "ohavsession")]
+unsafe extern "C" {}
 
 #[cfg(feature = "api-23")]
 #[cfg_attr(docsrs, doc(cfg(feature = "api-23")))]

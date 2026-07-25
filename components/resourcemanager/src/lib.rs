@@ -1,10 +1,12 @@
-//! Bindings to the OpenHarmony ResourceManager API.
+//! Bindings to the `OpenHarmony` `ResourceManager` API.
 //!
-//! ResourceManager provides APIs for querying application resources such as
+//! `ResourceManager` provides APIs for querying application resources such as
 //! strings, booleans, media, colors, and configuration. Available since
-//! API-level 12.
+//! `API-level 12`.
 //!
-//! Rawfile APIs are provided by `ohos-rawfile-sys`; this crate only exposes the
+//! Official `ResourceManager` C API reference: <https://docs.openharmony.cn/pages/v5.0/en/application-dev/reference/apis-localization-kit/capi-ohresmgr-h.md>.
+//!
+//! `Rawfile` APIs are provided by `ohos-rawfile-sys`; this crate only exposes the
 //! ResourceManager headers to avoid mixing the rawfile `OH_ResourceManager_*RawFile*`
 //! functions into these bindings.
 //!

@@ -1,8 +1,10 @@
-//! Bindings to the OpenHarmony i18n timezone API.
+//! Bindings to the `OpenHarmony` `i18n` timezone API.
 //!
 //! The i18n timezone API provides timezone offset transition rules through
 //! `libohi18n.so`. Function names use the lower-case `OH_i18n_` prefix.
 //! Available since API-level 22.
+//!
+//! Official `timezone` C API reference: <https://docs.openharmony.cn/pages/v5.0/en/application-dev/reference/apis-localization-kit/capi-timezone-h.md>.
 //!
 //! ## Feature flags
 #![cfg_attr(

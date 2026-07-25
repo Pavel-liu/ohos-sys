@@ -1,7 +1,9 @@
-//! Bindings to the OpenHarmony `OHAudioSuite` API.
+//! Bindings to the `OpenHarmony` `OHAudioSuite` API.
 //!
 //! `OHAudioSuite` provides raw audio-suite engine and audio-node FFI. Available
 //! since API-level 22.
+//!
+//! Official `OHAudioSuite` C API reference: <https://docs.openharmony.cn/pages/v5.0/en/application-dev/reference/apis-audio-kit/capi-ohaudiosuite.md>.
 //!
 //! ## Feature flags
 #![cfg_attr(

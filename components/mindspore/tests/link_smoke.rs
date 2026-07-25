@@ -19,3 +19,12 @@ fn link_smoke_api_10() {
     let _context_create: unsafe extern "C" fn() -> ohos_mindspore_sys::OH_AI_ContextHandle =
         ohos_mindspore_sys::OH_AI_ContextCreate;
 }
+
+#[cfg(feature = "api-11")]
+#[test]
+fn link_smoke_api_11_train_cfg() {
+    let _train_cfg_create: unsafe extern "C" fn() -> ohos_mindspore_sys::OH_AI_TrainCfgHandle =
+        ohos_mindspore_sys::OH_AI_TrainCfgCreate;
+    let _train_cfg_destroy: unsafe extern "C" fn(*mut ohos_mindspore_sys::OH_AI_TrainCfgHandle) =
+        ohos_mindspore_sys::OH_AI_TrainCfgDestroy;
+}

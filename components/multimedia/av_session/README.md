@@ -4,6 +4,8 @@ Raw FFI bindings for the AVSessionKit NDK.
 
 The crate exposes generated C ABI bindings only. It intentionally does not add safe wrappers around session ownership, cast-controller ownership, or callback lifetimes.
 
+C API reference: [AVSessionKit C API](https://docs.openharmony.cn/pages/v5.0/en/application-dev/reference/apis-avsession-kit/capi-avsession.md).
+
 ## Feature flags
 
 - `api-13` enables the base AV session, metadata, and error bindings.
@@ -13,7 +15,7 @@ The crate exposes generated C ABI bindings only. It intentionally does not add s
 
 ## Linked library
 
-All modules link against `libohavsession.so` via `#[link(name = "ohavsession")]`.
+The crate root links against `libohavsession.so` via `#[link(name = "ohavsession")]`.
 
 ## License
 

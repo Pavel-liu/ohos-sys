@@ -1,9 +1,11 @@
-//! Bindings to the OpenHarmony `MindSpore Lite` NDK API.
+//! Bindings to the `OpenHarmony` `MindSpore Lite` NDK API.
 //!
 //! `MindSpore Lite` provides model, tensor, context, status, data type, and
 //! format APIs through `libmindspore_lite_ndk.so`. The SDK headers document
 //! some APIs as available since API-level 9, but this crate follows the root
 //! `ohos-sys` feature chain and exposes `MindSpore` from API-level 10 onward.
+//!
+//! Official `MindSpore Lite` C API reference: <https://docs.openharmony.cn/pages/v5.0/en/application-dev/reference/apis-mindspore-lite-kit/_mind_spore.md>.
 //!
 //! ## Feature flags
 #![cfg_attr(

@@ -1,8 +1,10 @@
-//! Bindings to the OpenHarmony CameraKit `ohcamera` API.
+//! Bindings to the `OpenHarmony` `CameraKit` `ohcamera` API.
 //!
 //! This crate exposes raw C ABI bindings generated from `ohcamera/*.h`. It does
 //! not provide safe wrappers around callbacks, camera object ownership, or output
 //! lifecycle management. Available since API-level 11.
+//!
+//! Official `CameraKit` C API reference: <https://docs.openharmony.cn/pages/v5.0/en/application-dev/reference/apis-camera-kit/capi-ohcamera.md>.
 //!
 //! ## Feature flags
 #![cfg_attr(

@@ -6,6 +6,8 @@ ownership, and output-session lifetimes remain the caller's responsibility.
 
 Available since API-level 11. API-10 has no bindings.
 
+C API reference: [CameraKit `ohcamera` C API](https://docs.openharmony.cn/pages/v5.0/en/application-dev/reference/apis-camera-kit/capi-ohcamera.md).
+
 Generated headers: `ohcamera/*.h`.
 
 ## Opaque external types

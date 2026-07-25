@@ -16,3 +16,15 @@ fn link_smoke_api_22() {
     ) -> ohos_ohaudiosuite_sys::OH_AudioSuite_Result =
         ohos_ohaudiosuite_sys::OH_AudioSuiteEngine_CreateNode;
 }
+
+#[cfg(feature = "api-23")]
+#[test]
+fn link_smoke_api_23() {
+    let _set_tempo_and_pitch: unsafe extern "C" fn(
+        *mut ohos_ohaudiosuite_sys::OH_AudioNode,
+        f32,
+        f32,
+    )
+        -> ohos_ohaudiosuite_sys::OH_AudioSuite_Result =
+        ohos_ohaudiosuite_sys::OH_AudioSuiteEngine_SetTempoAndPitch;
+}

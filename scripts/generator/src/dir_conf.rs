@@ -534,6 +534,8 @@ pub(crate) fn get_module_bindings_config() -> Vec<DirBindingsConf> {
                 strip_prefix(&stem, "media_")
             })),
             set_builder_opts: Box::new(|file_stem, header_path, builder| {
+                // MediaLibrary headers are C ABI but include SDK C++ constructs; C++
+                // mode plus shared opaque image/media types keeps generated modules isolated.
                 let builder = if file_stem != "asset_base" {
                     builder.raw_line("use crate::asset_base::*;")
                 } else {
@@ -552,6 +554,8 @@ pub(crate) fn get_module_bindings_config() -> Vec<DirBindingsConf> {
             output_dir: "components/ohcamera/src".to_string(),
             rename_output_file: None,
             set_builder_opts: Box::new(|file_stem, header_path, builder| {
+                // ohcamera headers are C ABI exports inside SDK C++ headers; keep
+                // C++ parsing mode and explicit cross-module imports together.
                 let builder = if file_stem != "camera" {
                     builder.raw_line("use crate::camera::*;")
                 } else {
@@ -559,6 +563,7 @@ pub(crate) fn get_module_bindings_config() -> Vec<DirBindingsConf> {
                 };
                 let builder = builder
                     .allowlist_file(header_path.to_str().unwrap())
+                    // See module note above: required for OpenHarmony SDK headers.
                     .clang_args(&["-x", "c++"]);
                 match file_stem {
                     "camera_input" => builder.raw_line(
@@ -580,6 +585,8 @@ pub(crate) fn get_module_bindings_config() -> Vec<DirBindingsConf> {
                         .raw_line("use crate::video_output::Camera_VideoOutput;")
                         .raw_line("#[repr(transparent)]")
                         .raw_line("#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]")
+                        // Avoid depending on ohos-window-sys solely for this enum-shaped
+                        // native-buffer color-space value; layout matches the SDK integer.
                         .raw_line("pub struct OH_NativeBuffer_ColorSpace(pub ::core::ffi::c_uint);"),
                     "photo_native" => builder.raw_line(
                         "#[allow(unused_imports)]use ohos_sys_opaque_types::{OH_ImageNative, OH_PictureNative};",

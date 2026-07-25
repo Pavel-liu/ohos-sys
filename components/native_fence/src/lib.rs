@@ -1,7 +1,9 @@
-//! Bindings to the OpenHarmony NativeFence API.
+//! Bindings to the `OpenHarmony` `NativeFence` API.
 //!
-//! NativeFence provides APIs for validating, waiting on, and closing native
-//! fence file descriptors. Available since API-level 20.
+//! `NativeFence` provides APIs for validating, waiting on, and closing native
+//! fence file descriptors. Available since `API-level 20`.
+//!
+//! Official `NativeFence` C API reference: <https://docs.openharmony.cn/pages/v5.0/en/application-dev/reference/apis-arkgraphics2d/capi-native-fence-h.md>.
 //!
 //! ## Feature flags
 #![cfg_attr(
