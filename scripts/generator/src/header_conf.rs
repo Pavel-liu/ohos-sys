@@ -597,6 +597,124 @@ pub(crate) fn get_bindings_config(_api_version: u32) -> Vec<BindingConf> {
                     .clang_arg("stdbool.h")
             }),
         },
+        BindingConf {
+            include_filename: "distributedhardware/device_manager/oh_device_manager.h".to_string(),
+            output_prefix: "components/distributedhardware/src/distributedhardware".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .newtype_enum("^DeviceManager_ErrorCode$")
+                    .allowlist_file(r".*/distributedhardware/device_manager/oh_device_manager\.h")
+                    .allowlist_file(r".*/distributedhardware/device_manager/oh_device_manager_err_code\.h")
+                    .clang_args(["-include", "distributedhardware/device_manager/oh_device_manager_err_code.h"])
+                    .clang_args(["-x", "c++"])
+            }),
+        },
+        BindingConf {
+            include_filename: "native_fence/native_fence.h".to_string(),
+            output_prefix: "components/native_fence/src/native_fence".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .allowlist_file(r".*/native_fence/native_fence\.h")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+            }),
+        },
+        BindingConf {
+            include_filename: "resourcemanager/ohresmgr.h".to_string(),
+            output_prefix: "components/resourcemanager/src/resourcemanager".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .newtype_enum("^ResourceManager_ErrorCode$")
+                    .newtype_enum("^ResourceManager_Direction$")
+                    .newtype_enum("^ResourceManager_ColorMode$")
+                    .newtype_enum("^ResourceManager_DeviceType$")
+                    .newtype_enum("^ScreenDensity$")
+                    .allowlist_file(r".*/resourcemanager/ohresmgr\.h")
+                    .allowlist_file(r".*/resourcemanager/resmgr_common\.h")
+                    .blocklist_file(r".*/rawfile/.*\.h")
+                    .blocklist_file(r".*/arkui/drawable_descriptor\.h")
+                    .blocklist_type("^NativeResourceManager$")
+                    .blocklist_type("^ArkUI_DrawableDescriptor$")
+                    .raw_line("#[cfg(feature = \"api-12\")]")
+                    .raw_line("#[cfg_attr(docsrs, doc(cfg(feature = \"api-12\")))]")
+                    .raw_line("pub enum NativeResourceManager {}")
+                    .raw_line("#[cfg(feature = \"api-12\")]")
+                    .raw_line("#[cfg_attr(docsrs, doc(cfg(feature = \"api-12\")))]")
+                    .raw_line("pub enum ArkUI_DrawableDescriptor {}")
+                    .clang_args(["-x", "c++"])
+            }),
+        },
+        BindingConf {
+            include_filename: "mindspore/model.h".to_string(),
+            output_prefix: "components/mindspore/src/mindspore".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .newtype_enum("^OH_AI_.*")
+                    .allowlist_file(r".*/mindspore/context\.h")
+                    .allowlist_file(r".*/mindspore/model\.h")
+                    .allowlist_file(r".*/mindspore/tensor\.h")
+                    .allowlist_file(r".*/mindspore/types\.h")
+                    .allowlist_file(r".*/mindspore/status\.h")
+                    .allowlist_file(r".*/mindspore/data_type\.h")
+                    .allowlist_file(r".*/mindspore/format\.h")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+            }),
+        },
+        BindingConf {
+            include_filename: "TEEKit/tee_client/tee_client_api.h".to_string(),
+            output_prefix: "components/teekit/src/tee_client".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .newtype_enum("^TEEC_.*")
+                    .allowlist_file(r".*/TEEKit/tee_client/tee_client_api\.h")
+                    .allowlist_file(r".*/TEEKit/tee_client/tee_client_constants\.h")
+                    .allowlist_file(r".*/TEEKit/tee_client/tee_client_type\.h")
+                    .blocklist_type("^sem_t$")
+                    .raw_line("pub enum sem_t {}")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+            }),
+        },
+        BindingConf {
+            include_filename: "i18n/timezone.h".to_string(),
+            output_prefix: "components/i18n/src/i18n".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .newtype_enum("^DateRuleType$")
+                    .newtype_enum("^TimeRuleType$")
+                    .newtype_enum("^I18n_ErrorCode$")
+                    .allowlist_file(r".*/i18n/timezone\.h")
+                    .allowlist_file(r".*/i18n/errorcode\.h")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+            }),
+        },
+        BindingConf {
+            include_filename: "ohaudiosuite/native_audio_suite_base.h".to_string(),
+            output_prefix: "components/ohaudiosuite/src/native_audio_suite_base".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .newtype_enum("^OH_Audio.*")
+                    .newtype_enum("^OH_.*Type$")
+                    .allowlist_file(r".*/ohaudiosuite/native_audio_suite_base\.h")
+                    .allowlist_file(r".*/multimedia/native_audio_channel_layout\.h")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+            }),
+        },
+        BindingConf {
+            include_filename: "ohaudiosuite/native_audio_suite_engine.h".to_string(),
+            output_prefix: "components/ohaudiosuite/src/native_audio_suite_engine".to_string(),
+            set_builder_opts: Box::new(|builder| {
+                builder
+                    .allowlist_file(r".*/ohaudiosuite/native_audio_suite_engine\.h")
+                    .blocklist_type("^OH_Audio")
+                    .raw_line("pub use crate::native_audio_suite_base_ffi::*;")
+                    .clang_arg("-include")
+                    .clang_arg("stdbool.h")
+            }),
+        },
 
     ]
 }

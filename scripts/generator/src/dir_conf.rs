@@ -527,6 +527,116 @@ pub(crate) fn get_module_bindings_config() -> Vec<DirBindingsConf> {
             ..Default::default()
         },
         DirBindingsConf {
+            directory: "multimedia/media_library".to_string(),
+            output_dir: "components/multimedia/media_library/src".to_string(),
+            rename_output_file: Some(Box::new(|stem| {
+                let stem = strip_suffix(stem, "_capi");
+                strip_prefix(&stem, "media_")
+            })),
+            set_builder_opts: Box::new(|file_stem, header_path, builder| {
+                let builder = if file_stem != "asset_base" {
+                    builder.raw_line("use crate::asset_base::*;")
+                } else {
+                    builder.raw_line(
+                        "pub use ohos_sys_opaque_types::{OH_ImageSourceNative, OH_PictureNative};",
+                    )
+                };
+                builder
+                    .allowlist_file(header_path.to_str().unwrap())
+                    .clang_args(&["-x", "c++"])
+            }),
+            ..Default::default()
+        },
+        DirBindingsConf {
+            directory: "ohcamera".to_string(),
+            output_dir: "components/ohcamera/src".to_string(),
+            rename_output_file: None,
+            set_builder_opts: Box::new(|file_stem, header_path, builder| {
+                let builder = if file_stem != "camera" {
+                    builder.raw_line("use crate::camera::*;")
+                } else {
+                    builder
+                };
+                let builder = builder
+                    .allowlist_file(header_path.to_str().unwrap())
+                    .clang_args(&["-x", "c++"]);
+                match file_stem {
+                    "camera_input" => builder.raw_line(
+                        "#[allow(unused_imports)]use crate::camera::Camera_Device;",
+                    ),
+                    "camera_manager" => builder
+                        .raw_line("use crate::camera::Camera_Device;")
+                        .raw_line("use crate::camera_input::Camera_Input;")
+                        .raw_line("use crate::capture_session::Camera_CaptureSession;")
+                        .raw_line("use crate::metadata_output::Camera_MetadataOutput;")
+                        .raw_line("use crate::photo_output::Camera_PhotoOutput;")
+                        .raw_line("use crate::preview_output::Camera_PreviewOutput;")
+                        .raw_line("use crate::video_output::Camera_VideoOutput;"),
+                    "capture_session" => builder
+                        .raw_line("use crate::camera_input::Camera_Input;")
+                        .raw_line("use crate::metadata_output::Camera_MetadataOutput;")
+                        .raw_line("use crate::photo_output::Camera_PhotoOutput;")
+                        .raw_line("use crate::preview_output::Camera_PreviewOutput;")
+                        .raw_line("use crate::video_output::Camera_VideoOutput;")
+                        .raw_line("#[repr(transparent)]")
+                        .raw_line("#[derive(Debug, Copy, Clone, Hash, PartialEq, Eq)]")
+                        .raw_line("pub struct OH_NativeBuffer_ColorSpace(pub ::core::ffi::c_uint);"),
+                    "photo_native" => builder.raw_line(
+                        "#[allow(unused_imports)]use ohos_sys_opaque_types::{OH_ImageNative, OH_PictureNative};",
+                    ),
+                    "photo_output" => builder
+                        .raw_line("use crate::photo_native::OH_PhotoNative;")
+                        .raw_line("use ohos_sys_opaque_types::OH_MediaAsset;"),
+                    "preview_output" => builder.raw_line(
+                        "#[allow(unused_imports)]use ohos_sys_opaque_types::OHNativeWindow;",
+                    ),
+                    "video_output" => builder.raw_line(
+                        "#[allow(unused_imports)]use ohos_sys_opaque_types::OHNativeWindow;",
+                    ),
+                    _ => builder,
+                }
+            }),
+            ..Default::default()
+        },
+        DirBindingsConf {
+            directory: "multimedia/av_session".to_string(),
+            output_dir: "components/multimedia/av_session/src".to_string(),
+            rename_output_file: Some(Box::new(|stem| strip_prefix(stem, "native_"))),
+            set_builder_opts: Box::new(|file_stem, header_path, builder| {
+                let builder = builder
+                    .allowlist_file(header_path.to_str().unwrap())
+                    .clang_args(&["-x", "c++"]);
+                match file_stem {
+                    "deviceinfo" => builder
+                        .raw_line("#[allow(unused_imports)]use crate::avsession_base::{AVSession_AVCastCategory, AVSession_DeviceType, AVSession_ProtocolType};")
+                        .raw_line("use crate::avsession_errors::AVSession_ErrCode;"),
+                    "avplaybackstate" => builder
+                        .raw_line("#[allow(unused_imports)]use crate::avsession_base::{AVSession_PlaybackSpeed, AVSession_PlaybackState};")
+                        .raw_line("use crate::avsession_errors::AVSession_ErrCode;"),
+                    "avmetadata" => builder
+                        .raw_line("#[allow(unused_imports)]use crate::avsession_base::{AVMetadata_DisplayTag, AVMetadata_SkipIntervals};")
+                        .raw_line("use crate::avsession_errors::AVMetadata_Result;"),
+                    "avqueueitem" => builder
+                        .raw_line("use crate::avsession_errors::AVQueueItem_Result;"),
+                    "avsession" => builder
+                        .raw_line("#[allow(unused_imports)]use crate::avmetadata::{OH_AVMetadata, OH_AVMetadataBuilder};")
+                        .raw_line("#[allow(unused_imports)]use crate::avplaybackstate::OH_AVSession_AVPlaybackState;")
+                        .raw_line("use crate::avplaybackstate::AVSession_PlaybackPosition;")
+                        .raw_line("use crate::avsession_base::*;")
+                        .raw_line("use crate::avsession_errors::{AVSession_ErrCode, AVSessionCallback_Result};")
+                        .raw_line("#[allow(unused_imports)]use crate::deviceinfo::{AVSession_DeviceInfo, AVSession_OutputDeviceInfo};"),
+                    "avcastcontroller" => builder
+                        .raw_line("use crate::avplaybackstate::OH_AVSession_AVPlaybackState;")
+                        .raw_line("use crate::avqueueitem::OH_AVSession_AVQueueItem;")
+                        .raw_line("use crate::avsession::OH_AVCastController;")
+                        .raw_line("use crate::avsession_base::*;")
+                        .raw_line("use crate::avsession_errors::{AVSession_ErrCode, AVSessionCallback_Result};"),
+                    _ => builder,
+                }
+            }),
+            ..Default::default()
+        },
+        DirBindingsConf {
             directory: "inputmethod".to_string(),
             output_dir: "components/inputmethod/src".to_string(),
             rename_output_file: Some(Box::new(|stem| {

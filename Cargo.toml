@@ -14,8 +14,10 @@ rust-version = "1.78.0"
 members = [
     "components/*",
     "components/multimedia/drm_framework",
+    "components/multimedia/av_session",
     "components/multimedia/image_effect",
     "components/multimedia/image_framework",
+    "components/multimedia/media_library",
     "components/multimedia/player_framework",
     "components/multimedia/video_processing_engine",
 ]
@@ -38,11 +40,13 @@ hitrace-sys = { version = "0.1.10", optional = true, path = "components/hitrace"
 ohos-abilitykit-sys = { version = "0.1.6", optional = true, path = "components/abilitykit" }
 ohos-background-process-manager-sys = { version = "0.1.0", optional = true, path = "components/background_process_manager" }
 ohos-deviceinfo-sys = { version = "0.1.7", optional = true, path = "components/deviceinfo" }
+ohos-distributedhardware-sys = { version = "0.1.0", optional = true, path = "components/distributedhardware" }
 ohos-ddk-sys = { version = "0.1.0", optional = true, path = "components/ddk" }
 ohos-hid-sys = { version = "0.1.0", optional = true, path = "components/hid" }
 ohos-native-color-space-manager-sys = { version = "0.1.0", optional = true, path = "components/native_color_space_manager" }
 ohos-native-display-soloist-sys = { version = "0.1.0", optional = true, path = "components/native_display_soloist" }
 ohos-native-effect-sys = { version = "0.1.0", optional = true, path = "components/native_effect" }
+ohos-native-fence-sys = { version = "0.1.0", optional = true, path = "components/native_fence" }
 ohos-purgeable-memory-sys = { version = "0.1.0", optional = true, path = "components/purgeable_memory" }
 ohos-scsi-peripheral-sys = { version = "0.1.0", optional = true, path = "components/scsi_peripheral" }
 ohos-transient-task-sys = { version = "0.1.0", optional = true, path = "components/transient_task" }
@@ -54,16 +58,22 @@ ohos-bundle-sys = { version = "0.1.0", optional = true, path = "components/bundl
 ohos-hiappevent-sys = { version = "0.1.0", optional = true, path = "components/hiappevent" }
 ohos-drm-sys = { version = "0.1.0", optional = true, path = "components/multimedia/drm_framework" }
 ohos-image-effect-sys = { version = "0.1.0", optional = true, path = "components/multimedia/image_effect" }
+ohos-i18n-sys = { version = "0.1.0", optional = true, path = "components/i18n" }
+ohos-mindspore-sys = { version = "0.1.0", optional = true, path = "components/mindspore" }
 ohos-neural-network-runtime-sys = { version = "0.1.0", optional = true, path = "components/neural_network_runtime" }
 ohos-usb-sys = { version = "0.1.0", optional = true, path = "components/usb" }
 ohos-drawing-sys = { path = "components/drawing", version = "0.3.4", optional = true }
 ohos-hidebug-sys = { version = "0.1.0", optional = true, path = "components/hidebug" }
 ohos-hicollie-sys = { version = "0.1.0", optional = true, path = "components/hicollie" }
+ohos-av-session-sys = { version = "0.1.0", optional = true, path = "components/multimedia/av_session" }
 ohos-image-kit-sys = { version = "0.3.6", optional = true, path = "components/multimedia/image_framework" }
+ohos-media-library-sys = { version = "0.1.0", optional = true, path = "components/multimedia/media_library" }
 ohos-media-sys = { version = "0.1.1", optional = true, path = "components/multimedia/player_framework" }
 ohos-video-processing-engine-sys = { version = "0.1.0", optional = true, path = "components/multimedia/video_processing_engine" }
 ohos-ime-sys = { version = "0.2.4", optional = true, path = "components/inputmethod" }
 ohaudio-sys = { version = "0.1.0", optional = true, path = "components/ohaudio" }
+ohos-ohaudiosuite-sys = { version = "0.1.0", optional = true, path = "components/ohaudiosuite" }
+ohos-ohcamera-sys = { version = "0.1.0", optional = true, path = "components/ohcamera" }
 arkweb-sys = { version = "0.1.1", optional = true, path = "components/web" }
 ohos-ipckit-sys = { version = "0.1.1", optional = true, path = "components/ipckit" }
 ohos-locationkit-sys = { version = "0.1.1", optional = true, path = "components/locationkit" }
@@ -74,6 +84,7 @@ ohos-input-sys = { version = "0.3.4", optional = true, path = "components/multim
 ohos-pasteboard-sys = { version = "0.1.5", optional = true, path = "components/pasteboard" }
 ohos-libqos-sys = { version = "0.1.0", optional = true, path = "components/qos" }
 ohos-rawfile-sys = { version = "0.1.4", optional = true, path = "components/rawfile" }
+ohos-resourcemanager-sys = { version = "0.1.0", optional = true, path = "components/resourcemanager" }
 ohos-rdb-sys = { version = "0.1.0", optional = true, path = "components/rdb" }
 ohos-sensors-sys = { version = "0.1.1", optional = true, path = "components/sensors" }
 ohos-dataprotectionkit-sys = { version = "0.1.0", optional = true, path = "components/DataProtectionKit" }
@@ -82,6 +93,7 @@ ohos-ffrt-sys = { version = "0.1.0", optional = true, path = "components/ffrt" }
 ohos-connectivitykit-sys = { version = "0.1.0", optional = true, path = "components/ConnectivityKit" }
 ohos-sys-opaque-types = { workspace = true }
 ohos-filemanagement-sys = { version = "0.1.0", optional = true, path = "components/filemanagement" }
+ohos-teekit-sys = { version = "0.1.0", optional = true, path = "components/teekit" }
 ohos-window-sys = { version = "0.1.7", optional = true, path = "components/window" }
 ohos-vsync-sys = { version = "0.1.6", optional = true, path = "components/vsync" }
 udmf-sys = { version = "0.1.4", optional = true, path = "components/udmf" }
@@ -123,12 +135,16 @@ crypto = ["dep:ohos-crypto-sys"]
 huks = ["dep:ohos-huks-sys"]
 ## Enables bindings to `deviceinfo.h`. Re-exports `ohos-deviceinfo-sys`
 deviceinfo = ["dep:ohos-deviceinfo-sys"]
+## Enables bindings to the DistributedHardware DeviceManager API. Re-exports `ohos-distributedhardware-sys`.
+distributedhardware = ["dep:ohos-distributedhardware-sys"]
 ## Enables bindings to the Driver Development Kit API. Re-exports `ohos-ddk-sys`.
 ddk = ["dep:ohos-ddk-sys"]
 hid = ["dep:ohos-hid-sys"]
 native-color-space-manager = ["dep:ohos-native-color-space-manager-sys"]
 native-display-soloist = ["dep:ohos-native-display-soloist-sys"]
 native-effect = ["dep:ohos-native-effect-sys"]
+## Enables bindings to the NativeFence API. Re-exports `ohos-native-fence-sys`.
+native-fence = ["dep:ohos-native-fence-sys"]
 purgeable-memory = ["dep:ohos-purgeable-memory-sys"]
 scsi-peripheral = ["dep:ohos-scsi-peripheral-sys"]
 transient-task = ["dep:ohos-transient-task-sys"]
@@ -138,8 +154,11 @@ notificationkit = ["dep:ohos-notificationkit-sys"]
 ark-runtime = ["dep:ohos-ark-runtime-sys"]
 bundle = ["dep:ohos-bundle-sys"]
 hiappevent = ["dep:ohos-hiappevent-sys"]
+i18n = ["dep:ohos-i18n-sys"]
 drm = ["dep:ohos-drm-sys"]
 image-effect = ["dep:ohos-image-effect-sys"]
+## Enables bindings to the MindSpore Lite NDK API. Re-exports `ohos-mindspore-sys`.
+mindspore = ["dep:ohos-mindspore-sys"]
 neural-network-runtime = ["dep:ohos-neural-network-runtime-sys"]
 usb = ["dep:ohos-usb-sys"]
 ## Enables bindings to `native_drawing`. Re-exports `ohos-drawing-sys`.
@@ -166,6 +185,10 @@ net_ssl = ["dep:ohos-net-ssl-sys"]
 netstack = ["dep:ohos-netstack-sys"]
 ## Bindings to the [Image Kit](https://docs.openharmony.cn/pages/v5.0/en/application-dev/media/image/image-overview.md)
 image-kit = ["dep:ohos-image-kit-sys"]
+## Bindings to the AVSessionKit framework. Re-exports `ohos-av-session-sys`.
+av-session = ["dep:ohos-av-session-sys"]
+## Bindings to the MediaLibraryKit media library APIs. Re-exports `ohos-media-library-sys`.
+media-library = ["dep:ohos-media-library-sys"]
 ## Bindings to the Media framework (Player / Recorder / Transcoder, AVCodec,
 ## demuxer / muxer, screen capture, low-power AV sinks). Re-exports `ohos-media-sys`.
 media = ["dep:ohos-media-sys"]
@@ -178,6 +201,10 @@ video-processing-engine = ["dep:ohos-video-processing-engine-sys"]
 multimodal-input = ["dep:ohos-input-sys"]
 ## Enables bindings to the OHAudio module.
 ohaudio = ["dep:ohaudio-sys"]
+## Enables bindings to the OHAudioSuite module. Re-exports `ohos-ohaudiosuite-sys`.
+ohaudiosuite = ["dep:ohos-ohaudiosuite-sys"]
+## Enables bindings to the CameraKit ohcamera APIs. Re-exports `ohos-ohcamera-sys`.
+ohcamera = ["dep:ohos-ohcamera-sys"]
 ## Enables bindings to the Web module.
 web = ["dep:arkweb-sys"]
 ## Enables bindings to `napi`
@@ -195,12 +222,16 @@ pasteboard = ['dep:ohos-pasteboard-sys']
 qos = ['dep:ohos-libqos-sys']
 ## Enables bindings to `rawfile`
 rawfile = ['ohos-rawfile-sys']
+## Enables bindings to ResourceManager. Re-exports `ohos-resourcemanager-sys`.
+resourcemanager = ['dep:ohos-resourcemanager-sys']
 ## Enables bindings to the relational database (RDB)
 rdb = ["dep:ohos-rdb-sys"]
 ## Enables bindings to the sensors module.
 sensors = ["dep:ohos-sensors-sys"]
 ## Enables bindings to the DataProtectionKit (DLP permission) API. Re-exports `ohos-dataprotectionkit-sys`.
 dataprotectionkit = ["dep:ohos-dataprotectionkit-sys"]
+## Enables bindings to the TEEKit tee_client API. Re-exports `ohos-teekit-sys`.
+teekit = ["dep:ohos-teekit-sys"]
 ## Enables bindings to the TelephonyKit (cellular data + radio) API. Re-exports `ohos-telephony-sys`.
 telephony = ["dep:ohos-telephony-sys"]
 ## Enables bindings to the FFRT (Function Flow Runtime) API. Re-exports `ohos-ffrt-sys`.
@@ -235,11 +266,13 @@ all-components = [
     "dataprotectionkit",
     "huks",
     "deviceinfo",
+    "distributedhardware",
     "ddk",
     "hid",
     "native-color-space-manager",
     "native-display-soloist",
     "native-effect",
+    "native-fence",
     "purgeable-memory",
     "scsi-peripheral",
     "transient-task",
@@ -249,8 +282,10 @@ all-components = [
     "ark-runtime",
     "bundle",
     "hiappevent",
+    "i18n",
     "drm",
     "image-effect",
+    "mindspore",
     "neural-network-runtime",
     "usb",
     "drawing",
@@ -270,12 +305,16 @@ all-components = [
     "image-kit-image-source",
     "image-kit-picture",
     "image-kit-pixelmap",
+    "av-session",
+    "media-library",
     "media",
     "video-processing-engine",
     "video-processing-engine-video-processing",
     "video-processing-engine-image-processing",
     "multimodal-input",
     "ohaudio",
+    "ohaudiosuite",
+    "ohcamera",
     "napi",
     "native_buffer",
     "native_image",
@@ -283,8 +322,10 @@ all-components = [
     "pasteboard",
     "qos",
     "rawfile",
+    "resourcemanager",
     "rdb",
     "sensors",
+    "teekit",
     "telephony",
     "filemanagement",
     "xcomponent",
@@ -302,7 +343,7 @@ all-components = [
 #! OpenHarmony versions.
 
 ## No effect. API-10 bindings can't be deselected. The feature exists for internal purposes.
-api-10 = ["ohos-media-sys?/api-10", "ohos-ffrt-sys?/api-10", "ohos-purgeable-memory-sys?/api-10", "ohos-usb-sys?/api-10"]
+api-10 = ["ohos-media-sys?/api-10", "ohos-ffrt-sys?/api-10", "ohos-purgeable-memory-sys?/api-10", "ohos-usb-sys?/api-10", "ohos-mindspore-sys?/api-10"]
 ## Enables bindings for OpenHarmony API-level 11
 api-11 = [
     "api-10",
@@ -318,6 +359,7 @@ api-11 = [
     "ohos-netmanager-sys?/api-11",
     "ohos-net-ssl-sys?/api-11",
     "ohos-netstack-sys?/api-11",
+    "ohos-ohcamera-sys?/api-11",
     "ohos-vsync-sys?/api-11",
     "ohos-window-sys?/api-11",
     "ohos-rawfile-sys?/api-11",
@@ -333,6 +375,7 @@ api-11 = [
     "ohos-ark-runtime-sys?/api-11",
     "ohos-bundle-sys?/api-11",
     "ohos-drm-sys?/api-11",
+    "ohos-mindspore-sys?/api-11",
     "ohos-neural-network-runtime-sys?/api-11",
 ]
 ## Enables bindings for OpenHarmony API-level 12
@@ -354,6 +397,7 @@ api-12 = [
     "ohos-drawing-sys?/api-12",
     "ohos-filemanagement-sys?/api-12",
     "ohos-image-kit-sys?/api-12",
+    "ohos-media-library-sys?/api-12",
     "ohos-media-sys?/api-12",
     "ohos-video-processing-engine-sys?/api-12",
     "ohos-ime-sys?/api-12",
@@ -363,11 +407,13 @@ api-12 = [
     "ohos-netmanager-sys?/api-12",
     "ohos-net-ssl-sys?/api-12",
     "ohos-netstack-sys?/api-12",
+    "ohos-ohcamera-sys?/api-12",
     "ohaudio-sys?/api-12",
     "arkweb-sys?/api-12",
     "ohos-pasteboard-sys?/api-12",
     "ohos-libqos-sys?/api-12",
     "ohos-rawfile-sys?/api-12",
+    "ohos-resourcemanager-sys?/api-12",
     "ohos-rdb-sys?/api-12",
     "ohos-sensors-sys?/api-12",
     "ohos-vsync-sys?/api-12",
@@ -387,6 +433,7 @@ api-12 = [
     "ohos-hiappevent-sys?/api-12",
     "ohos-image-effect-sys?/api-12",
     "ohos-drm-sys?/api-12",
+    "ohos-mindspore-sys?/api-12",
     "ohos-neural-network-runtime-sys?/api-12",
 ]
 
@@ -408,6 +455,8 @@ api-13 = [
     "ohos-ddk-sys?/api-13",
     "ohos-drawing-sys?/api-13",
     "ohos-image-kit-sys?/api-13",
+    "ohos-av-session-sys?/api-13",
+    "ohos-media-library-sys?/api-13",
     "ohos-media-sys?/api-13",
     "ohos-video-processing-engine-sys?/api-13",
     "ohos-ime-sys?/api-13",
@@ -417,11 +466,13 @@ api-13 = [
     "ohos-netmanager-sys?/api-13",
     "ohos-net-ssl-sys?/api-13",
     "ohos-netstack-sys?/api-13",
+    "ohos-ohcamera-sys?/api-13",
     "ohaudio-sys?/api-13",
     "arkweb-sys?/api-13",
     "ohos-pasteboard-sys?/api-13",
     "ohos-libqos-sys?/api-13",
     "ohos-rawfile-sys?/api-13",
+    "ohos-resourcemanager-sys?/api-13",
     "ohos-rdb-sys?/api-13",
     "ohos-sensors-sys?/api-13",
     "ohos-telephony-sys?/api-13",
@@ -445,6 +496,7 @@ api-13 = [
     "ohos-notificationkit-sys?/api-13",
     "ohos-native-color-space-manager-sys?/api-13",
     "ohos-drm-sys?/api-13",
+    "ohos-mindspore-sys?/api-13",
     "ohos-neural-network-runtime-sys?/api-13",
     "ohos-connectivitykit-sys?/api-13",
 ]
@@ -468,6 +520,8 @@ api-14 = [
     "ohos-ddk-sys?/api-14",
     "ohos-drawing-sys?/api-14",
     "ohos-image-kit-sys?/api-14",
+    "ohos-av-session-sys?/api-14",
+    "ohos-media-library-sys?/api-14",
     "ohos-media-sys?/api-14",
     "ohos-video-processing-engine-sys?/api-14",
     "ohos-ime-sys?/api-14",
@@ -477,11 +531,13 @@ api-14 = [
     "ohos-netmanager-sys?/api-14",
     "ohos-net-ssl-sys?/api-14",
     "ohos-netstack-sys?/api-14",
+    "ohos-ohcamera-sys?/api-14",
     "ohaudio-sys?/api-14",
     "arkweb-sys?/api-14",
     "ohos-pasteboard-sys?/api-14",
     "ohos-libqos-sys?/api-14",
     "ohos-rawfile-sys?/api-14",
+    "ohos-resourcemanager-sys?/api-14",
     "ohos-rdb-sys?/api-14",
     "ohos-sensors-sys?/api-14",
     "ohos-telephony-sys?/api-14",
@@ -505,6 +561,7 @@ api-14 = [
     "ohos-notificationkit-sys?/api-14",
     "ohos-native-color-space-manager-sys?/api-14",
     "ohos-drm-sys?/api-14",
+    "ohos-mindspore-sys?/api-14",
     "ohos-neural-network-runtime-sys?/api-14",
     "ohos-connectivitykit-sys?/api-14",
 ]
@@ -528,6 +585,8 @@ api-15 = [
     "ohos-ddk-sys?/api-15",
     "ohos-drawing-sys?/api-15",
     "ohos-image-kit-sys?/api-15",
+    "ohos-av-session-sys?/api-15",
+    "ohos-media-library-sys?/api-15",
     "ohos-media-sys?/api-15",
     "ohos-video-processing-engine-sys?/api-15",
     "ohos-ime-sys?/api-15",
@@ -537,11 +596,13 @@ api-15 = [
     "ohos-netmanager-sys?/api-15",
     "ohos-net-ssl-sys?/api-15",
     "ohos-netstack-sys?/api-15",
+    "ohos-ohcamera-sys?/api-15",
     "ohaudio-sys?/api-15",
     "arkweb-sys?/api-15",
     "ohos-pasteboard-sys?/api-15",
     "ohos-libqos-sys?/api-15",
     "ohos-rawfile-sys?/api-15",
+    "ohos-resourcemanager-sys?/api-15",
     "ohos-rdb-sys?/api-15",
     "ohos-sensors-sys?/api-15",
     "ohos-telephony-sys?/api-15",
@@ -565,6 +626,7 @@ api-15 = [
     "ohos-notificationkit-sys?/api-15",
     "ohos-native-color-space-manager-sys?/api-15",
     "ohos-drm-sys?/api-15",
+    "ohos-mindspore-sys?/api-15",
     "ohos-neural-network-runtime-sys?/api-15",
     "ohos-connectivitykit-sys?/api-15",
 ]
@@ -587,6 +649,8 @@ api-16 = ["api-15",
     "ohos-ddk-sys?/api-16",
     "ohos-drawing-sys?/api-16",
     "ohos-image-kit-sys?/api-16",
+    "ohos-av-session-sys?/api-16",
+    "ohos-media-library-sys?/api-16",
     "ohos-media-sys?/api-16",
     "ohos-video-processing-engine-sys?/api-16",
     "ohos-ime-sys?/api-16",
@@ -596,11 +660,13 @@ api-16 = ["api-15",
     "ohos-netmanager-sys?/api-16",
     "ohos-net-ssl-sys?/api-16",
     "ohos-netstack-sys?/api-16",
+    "ohos-ohcamera-sys?/api-16",
     "ohaudio-sys?/api-16",
     "arkweb-sys?/api-16",
     "ohos-pasteboard-sys?/api-16",
     "ohos-libqos-sys?/api-16",
     "ohos-rawfile-sys?/api-16",
+    "ohos-resourcemanager-sys?/api-16",
     "ohos-rdb-sys?/api-16",
     "ohos-sensors-sys?/api-16",
     "ohos-telephony-sys?/api-16",
@@ -624,6 +690,7 @@ api-16 = ["api-15",
     "ohos-notificationkit-sys?/api-16",
     "ohos-native-color-space-manager-sys?/api-16",
     "ohos-drm-sys?/api-16",
+    "ohos-mindspore-sys?/api-16",
     "ohos-neural-network-runtime-sys?/api-16",
     "ohos-connectivitykit-sys?/api-16",
 ]
@@ -646,6 +713,8 @@ api-17 = ["api-16",
     "ohos-ddk-sys?/api-17",
     "ohos-drawing-sys?/api-17",
     "ohos-image-kit-sys?/api-17",
+    "ohos-av-session-sys?/api-17",
+    "ohos-media-library-sys?/api-17",
     "ohos-media-sys?/api-17",
     "ohos-video-processing-engine-sys?/api-17",
     "ohos-ime-sys?/api-17",
@@ -655,11 +724,13 @@ api-17 = ["api-16",
     "ohos-netmanager-sys?/api-17",
     "ohos-net-ssl-sys?/api-17",
     "ohos-netstack-sys?/api-17",
+    "ohos-ohcamera-sys?/api-17",
     "ohaudio-sys?/api-17",
     "arkweb-sys?/api-17",
     "ohos-pasteboard-sys?/api-17",
     "ohos-libqos-sys?/api-17",
     "ohos-rawfile-sys?/api-17",
+    "ohos-resourcemanager-sys?/api-17",
     "ohos-rdb-sys?/api-17",
     "ohos-sensors-sys?/api-17",
     "ohos-telephony-sys?/api-17",
@@ -683,6 +754,7 @@ api-17 = ["api-16",
     "ohos-notificationkit-sys?/api-17",
     "ohos-native-color-space-manager-sys?/api-17",
     "ohos-drm-sys?/api-17",
+    "ohos-mindspore-sys?/api-17",
     "ohos-neural-network-runtime-sys?/api-17",
     "ohos-connectivitykit-sys?/api-17",
 ]
@@ -705,6 +777,8 @@ api-18 = ["api-17",
     "ohos-ddk-sys?/api-18",
     "ohos-drawing-sys?/api-18",
     "ohos-image-kit-sys?/api-18",
+    "ohos-av-session-sys?/api-18",
+    "ohos-media-library-sys?/api-18",
     "ohos-media-sys?/api-18",
     "ohos-video-processing-engine-sys?/api-18",
     "ohos-ime-sys?/api-18",
@@ -714,11 +788,13 @@ api-18 = ["api-17",
     "ohos-netmanager-sys?/api-18",
     "ohos-net-ssl-sys?/api-18",
     "ohos-netstack-sys?/api-18",
+    "ohos-ohcamera-sys?/api-18",
     "ohaudio-sys?/api-18",
     "arkweb-sys?/api-18",
     "ohos-pasteboard-sys?/api-18",
     "ohos-libqos-sys?/api-18",
     "ohos-rawfile-sys?/api-18",
+    "ohos-resourcemanager-sys?/api-18",
     "ohos-rdb-sys?/api-18",
     "ohos-sensors-sys?/api-18",
     "ohos-telephony-sys?/api-18",
@@ -742,6 +818,7 @@ api-18 = ["api-17",
     "ohos-notificationkit-sys?/api-18",
     "ohos-native-color-space-manager-sys?/api-18",
     "ohos-drm-sys?/api-18",
+    "ohos-mindspore-sys?/api-18",
     "ohos-neural-network-runtime-sys?/api-18",
     "ohos-scsi-peripheral-sys?/api-18",
     "ohos-usb-serial-sys?/api-18",
@@ -766,6 +843,8 @@ api-19 = ["api-18",
     "ohos-ddk-sys?/api-19",
     "ohos-drawing-sys?/api-19",
     "ohos-image-kit-sys?/api-19",
+    "ohos-av-session-sys?/api-19",
+    "ohos-media-library-sys?/api-19",
     "ohos-media-sys?/api-19",
     "ohos-video-processing-engine-sys?/api-19",
     "ohos-ime-sys?/api-19",
@@ -775,11 +854,13 @@ api-19 = ["api-18",
     "ohos-netmanager-sys?/api-19",
     "ohos-net-ssl-sys?/api-19",
     "ohos-netstack-sys?/api-19",
+    "ohos-ohcamera-sys?/api-19",
     "ohaudio-sys?/api-19",
     "arkweb-sys?/api-19",
     "ohos-pasteboard-sys?/api-19",
     "ohos-libqos-sys?/api-19",
     "ohos-rawfile-sys?/api-19",
+    "ohos-resourcemanager-sys?/api-19",
     "ohos-rdb-sys?/api-19",
     "ohos-sensors-sys?/api-19",
     "ohos-telephony-sys?/api-19",
@@ -803,6 +884,7 @@ api-19 = ["api-18",
     "ohos-notificationkit-sys?/api-19",
     "ohos-native-color-space-manager-sys?/api-19",
     "ohos-drm-sys?/api-19",
+    "ohos-mindspore-sys?/api-19",
     "ohos-neural-network-runtime-sys?/api-19",
     "ohos-scsi-peripheral-sys?/api-19",
     "ohos-usb-serial-sys?/api-19",
@@ -824,9 +906,12 @@ api-20 = ["api-19",
     "ohos-abilitykit-sys?/api-20",
     "ohos-background-process-manager-sys?/api-20",
     "ohos-deviceinfo-sys?/api-20",
+    "ohos-distributedhardware-sys?/api-20",
     "ohos-ddk-sys?/api-20",
     "ohos-drawing-sys?/api-20",
     "ohos-image-kit-sys?/api-20",
+    "ohos-av-session-sys?/api-20",
+    "ohos-media-library-sys?/api-20",
     "ohos-media-sys?/api-20",
     "ohos-video-processing-engine-sys?/api-20",
     "ohos-ime-sys?/api-20",
@@ -836,11 +921,13 @@ api-20 = ["api-19",
     "ohos-netmanager-sys?/api-20",
     "ohos-net-ssl-sys?/api-20",
     "ohos-netstack-sys?/api-20",
+    "ohos-ohcamera-sys?/api-20",
     "ohaudio-sys?/api-20",
     "arkweb-sys?/api-20",
     "ohos-pasteboard-sys?/api-20",
     "ohos-libqos-sys?/api-20",
     "ohos-rawfile-sys?/api-20",
+    "ohos-resourcemanager-sys?/api-20",
     "ohos-rdb-sys?/api-20",
     "ohos-sensors-sys?/api-20",
     "ohos-telephony-sys?/api-20",
@@ -856,6 +943,7 @@ api-20 = ["api-19",
     "ohos-transient-task-sys?/api-20",
     "ohos-native-display-soloist-sys?/api-20",
     "ohos-native-effect-sys?/api-20",
+    "ohos-native-fence-sys?/api-20",
     "ohos-usb-sys?/api-20",
     "ohos-ark-runtime-sys?/api-20",
     "ohos-bundle-sys?/api-20",
@@ -864,10 +952,12 @@ api-20 = ["api-19",
     "ohos-notificationkit-sys?/api-20",
     "ohos-native-color-space-manager-sys?/api-20",
     "ohos-drm-sys?/api-20",
+    "ohos-mindspore-sys?/api-20",
     "ohos-neural-network-runtime-sys?/api-20",
     "ohos-scsi-peripheral-sys?/api-20",
     "ohos-usb-serial-sys?/api-20",
     "ohos-connectivitykit-sys?/api-20",
+    "ohos-teekit-sys?/api-20",
 ]
 ## Enables bindings for OpenHarmony API-level 21
 api-21 = ["api-20",
@@ -885,9 +975,12 @@ api-21 = ["api-20",
     "ohos-abilitykit-sys?/api-21",
     "ohos-background-process-manager-sys?/api-21",
     "ohos-deviceinfo-sys?/api-21",
+    "ohos-distributedhardware-sys?/api-21",
     "ohos-ddk-sys?/api-21",
     "ohos-drawing-sys?/api-21",
     "ohos-image-kit-sys?/api-21",
+    "ohos-av-session-sys?/api-21",
+    "ohos-media-library-sys?/api-21",
     "ohos-media-sys?/api-21",
     "ohos-video-processing-engine-sys?/api-21",
     "ohos-ime-sys?/api-21",
@@ -897,11 +990,13 @@ api-21 = ["api-20",
     "ohos-netmanager-sys?/api-21",
     "ohos-net-ssl-sys?/api-21",
     "ohos-netstack-sys?/api-21",
+    "ohos-ohcamera-sys?/api-21",
     "ohaudio-sys?/api-21",
     "arkweb-sys?/api-21",
     "ohos-pasteboard-sys?/api-21",
     "ohos-libqos-sys?/api-21",
     "ohos-rawfile-sys?/api-21",
+    "ohos-resourcemanager-sys?/api-21",
     "ohos-rdb-sys?/api-21",
     "ohos-sensors-sys?/api-21",
     "ohos-telephony-sys?/api-21",
@@ -917,6 +1012,7 @@ api-21 = ["api-20",
     "ohos-transient-task-sys?/api-21",
     "ohos-native-display-soloist-sys?/api-21",
     "ohos-native-effect-sys?/api-21",
+    "ohos-native-fence-sys?/api-21",
     "ohos-usb-sys?/api-21",
     "ohos-ark-runtime-sys?/api-21",
     "ohos-bundle-sys?/api-21",
@@ -930,6 +1026,8 @@ api-21 = ["api-20",
     "ohos-usb-serial-sys?/api-21",
     "ohos-gamecontrollerkit-sys?/api-21",
     "ohos-connectivitykit-sys?/api-21",
+    "ohos-mindspore-sys?/api-21",
+    "ohos-teekit-sys?/api-21",
 ]
 ## Enables bindings for OpenHarmony API-level 22
 api-22 = ["api-21",
@@ -947,9 +1045,12 @@ api-22 = ["api-21",
     "ohos-abilitykit-sys?/api-22",
     "ohos-background-process-manager-sys?/api-22",
     "ohos-deviceinfo-sys?/api-22",
+    "ohos-distributedhardware-sys?/api-22",
     "ohos-ddk-sys?/api-22",
     "ohos-drawing-sys?/api-22",
     "ohos-image-kit-sys?/api-22",
+    "ohos-av-session-sys?/api-22",
+    "ohos-media-library-sys?/api-22",
     "ohos-media-sys?/api-22",
     "ohos-video-processing-engine-sys?/api-22",
     "ohos-ime-sys?/api-22",
@@ -960,10 +1061,12 @@ api-22 = ["api-21",
     "ohos-net-ssl-sys?/api-22",
     "ohos-netstack-sys?/api-22",
     "ohaudio-sys?/api-22",
+    "ohos-ohaudiosuite-sys?/api-22",
     "arkweb-sys?/api-22",
     "ohos-pasteboard-sys?/api-22",
     "ohos-libqos-sys?/api-22",
     "ohos-rawfile-sys?/api-22",
+    "ohos-resourcemanager-sys?/api-22",
     "ohos-rdb-sys?/api-22",
     "ohos-sensors-sys?/api-22",
     "ohos-telephony-sys?/api-22",
@@ -979,6 +1082,7 @@ api-22 = ["api-21",
     "ohos-transient-task-sys?/api-22",
     "ohos-native-display-soloist-sys?/api-22",
     "ohos-native-effect-sys?/api-22",
+    "ohos-native-fence-sys?/api-22",
     "ohos-usb-sys?/api-22",
     "ohos-ark-runtime-sys?/api-22",
     "ohos-bundle-sys?/api-22",
@@ -992,6 +1096,9 @@ api-22 = ["api-21",
     "ohos-usb-serial-sys?/api-22",
     "ohos-gamecontrollerkit-sys?/api-22",
     "ohos-connectivitykit-sys?/api-22",
+    "ohos-i18n-sys?/api-22",
+    "ohos-mindspore-sys?/api-22",
+    "ohos-teekit-sys?/api-22",
 ]
 ## Enables bindings for OpenHarmony API-level 23
 api-23 = ["api-22",
@@ -1009,9 +1116,12 @@ api-23 = ["api-22",
     "ohos-abilitykit-sys?/api-23",
     "ohos-background-process-manager-sys?/api-23",
     "ohos-deviceinfo-sys?/api-23",
+    "ohos-distributedhardware-sys?/api-23",
     "ohos-ddk-sys?/api-23",
     "ohos-drawing-sys?/api-23",
     "ohos-image-kit-sys?/api-23",
+    "ohos-av-session-sys?/api-23",
+    "ohos-media-library-sys?/api-23",
     "ohos-media-sys?/api-23",
     "ohos-video-processing-engine-sys?/api-23",
     "ohos-ime-sys?/api-23",
@@ -1022,10 +1132,12 @@ api-23 = ["api-22",
     "ohos-net-ssl-sys?/api-23",
     "ohos-netstack-sys?/api-23",
     "ohaudio-sys?/api-23",
+    "ohos-ohaudiosuite-sys?/api-23",
     "arkweb-sys?/api-23",
     "ohos-pasteboard-sys?/api-23",
     "ohos-libqos-sys?/api-23",
     "ohos-rawfile-sys?/api-23",
+    "ohos-resourcemanager-sys?/api-23",
     "ohos-rdb-sys?/api-23",
     "ohos-sensors-sys?/api-23",
     "ohos-telephony-sys?/api-23",
@@ -1041,6 +1153,7 @@ api-23 = ["api-22",
     "ohos-transient-task-sys?/api-23",
     "ohos-native-display-soloist-sys?/api-23",
     "ohos-native-effect-sys?/api-23",
+    "ohos-native-fence-sys?/api-23",
     "ohos-usb-sys?/api-23",
     "ohos-ark-runtime-sys?/api-23",
     "ohos-bundle-sys?/api-23",
@@ -1054,6 +1167,9 @@ api-23 = ["api-22",
     "ohos-usb-serial-sys?/api-23",
     "ohos-gamecontrollerkit-sys?/api-23",
     "ohos-connectivitykit-sys?/api-23",
+    "ohos-i18n-sys?/api-23",
+    "ohos-mindspore-sys?/api-23",
+    "ohos-teekit-sys?/api-23",
 ]
 
 #! ### Features of dependencies

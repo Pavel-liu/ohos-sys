@@ -81,6 +81,14 @@ pub struct OH_ImageSourceNative {
     _unused: [u8; 0],
 }
 #[repr(C)]
+pub struct OH_ImageNative {
+    _unused: [u8; 0],
+}
+#[repr(C)]
+pub struct OH_MediaAsset {
+    _unused: [u8; 0],
+}
+#[repr(C)]
 pub struct OH_AVFormat {
     _unused: [u8; 0],
 }

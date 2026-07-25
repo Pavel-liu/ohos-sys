@@ -114,6 +114,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "ohos-av-session-sys"
+version = "0.1.0"
+dependencies = [
+ "document-features",
+]
+
+[[package]]
 name = "ohos-background-process-manager-sys"
 version = "0.1.0"
 dependencies = [
@@ -166,6 +173,13 @@ dependencies = [
 [[package]]
 name = "ohos-deviceinfo-sys"
 version = "0.1.7"
+dependencies = [
+ "document-features",
+]
+
+[[package]]
+name = "ohos-distributedhardware-sys"
+version = "0.1.0"
 dependencies = [
  "document-features",
 ]
@@ -243,6 +257,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "ohos-i18n-sys"
+version = "0.1.0"
+dependencies = [
+ "document-features",
+]
+
+[[package]]
 name = "ohos-image-effect-sys"
 version = "0.1.0"
 dependencies = [
@@ -297,11 +318,26 @@ dependencies = [
 ]
 
 [[package]]
+name = "ohos-media-library-sys"
+version = "0.1.0"
+dependencies = [
+ "document-features",
+ "ohos-sys-opaque-types",
+]
+
+[[package]]
 name = "ohos-media-sys"
 version = "0.1.1"
 dependencies = [
  "document-features",
  "ohos-sys-opaque-types",
+]
+
+[[package]]
+name = "ohos-mindspore-sys"
+version = "0.1.0"
+dependencies = [
+ "document-features",
 ]
 
 [[package]]
@@ -320,6 +356,13 @@ dependencies = [
 
 [[package]]
 name = "ohos-native-effect-sys"
+version = "0.1.0"
+dependencies = [
+ "document-features",
+]
+
+[[package]]
+name = "ohos-native-fence-sys"
 version = "0.1.0"
 dependencies = [
  "document-features",
@@ -362,6 +405,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "ohos-ohaudiosuite-sys"
+version = "0.1.0"
+dependencies = [
+ "document-features",
+]
+
+[[package]]
+name = "ohos-ohcamera-sys"
+version = "0.1.0"
+dependencies = [
+ "document-features",
+ "ohos-sys-opaque-types",
+]
+
+[[package]]
 name = "ohos-pasteboard-sys"
 version = "0.1.5"
 dependencies = [
@@ -393,6 +451,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "ohos-resourcemanager-sys"
+version = "0.1.0"
+dependencies = [
+ "document-features",
+]
+
+[[package]]
 name = "ohos-scsi-peripheral-sys"
 version = "0.1.0"
 dependencies = [
@@ -420,6 +485,7 @@ dependencies = [
  "ohos-accesstoken-sys",
  "ohos-ark-runtime-sys",
  "ohos-asset-store-sys",
+ "ohos-av-session-sys",
  "ohos-background-process-manager-sys",
  "ohos-basic-services-kit-sys",
  "ohos-bundle-sys",
@@ -428,6 +494,7 @@ dependencies = [
  "ohos-dataprotectionkit-sys",
  "ohos-ddk-sys",
  "ohos-deviceinfo-sys",
+ "ohos-distributedhardware-sys",
  "ohos-drawing-sys",
  "ohos-drm-sys",
  "ohos-ffrt-sys",
@@ -438,6 +505,7 @@ dependencies = [
  "ohos-hid-sys",
  "ohos-hidebug-sys",
  "ohos-huks-sys",
+ "ohos-i18n-sys",
  "ohos-image-effect-sys",
  "ohos-image-kit-sys",
  "ohos-ime-sys",
@@ -445,22 +513,29 @@ dependencies = [
  "ohos-ipckit-sys",
  "ohos-libqos-sys",
  "ohos-locationkit-sys",
+ "ohos-media-library-sys",
  "ohos-media-sys",
+ "ohos-mindspore-sys",
  "ohos-native-color-space-manager-sys",
  "ohos-native-display-soloist-sys",
  "ohos-native-effect-sys",
+ "ohos-native-fence-sys",
  "ohos-net-ssl-sys",
  "ohos-netmanager-sys",
  "ohos-netstack-sys",
  "ohos-neural-network-runtime-sys",
  "ohos-notificationkit-sys",
+ "ohos-ohaudiosuite-sys",
+ "ohos-ohcamera-sys",
  "ohos-pasteboard-sys",
  "ohos-purgeable-memory-sys",
  "ohos-rawfile-sys",
  "ohos-rdb-sys",
+ "ohos-resourcemanager-sys",
  "ohos-scsi-peripheral-sys",
  "ohos-sensors-sys",
  "ohos-sys-opaque-types",
+ "ohos-teekit-sys",
  "ohos-telephony-sys",
  "ohos-transient-task-sys",
  "ohos-usb-serial-sys",
@@ -476,6 +551,13 @@ dependencies = [
 [[package]]
 name = "ohos-sys-opaque-types"
 version = "0.1.10"
+
+[[package]]
+name = "ohos-teekit-sys"
+version = "0.1.0"
+dependencies = [
+ "document-features",
+]
 
 [[package]]
 name = "ohos-telephony-sys"

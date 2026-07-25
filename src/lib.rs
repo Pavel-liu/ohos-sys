@@ -34,6 +34,10 @@ pub use ohos_crypto_sys as crypto;
 #[cfg_attr(docsrs, doc(cfg(feature = "deviceinfo")))]
 pub use ohos_deviceinfo_sys as deviceinfo;
 
+#[cfg(feature = "distributedhardware")]
+#[cfg_attr(docsrs, doc(cfg(feature = "distributedhardware")))]
+pub use ohos_distributedhardware_sys as distributedhardware;
+
 #[cfg(feature = "drawing")]
 #[cfg_attr(docsrs, doc(cfg(feature = "drawing")))]
 pub use ohos_drawing_sys as drawing;
@@ -57,6 +61,14 @@ pub use ohos_ime_sys as inputmethod;
 #[cfg(feature = "ohaudio")]
 #[cfg_attr(docsrs, doc(cfg(feature = "ohaudio")))]
 pub use ohaudio_sys as ohaudio;
+
+#[cfg(feature = "ohaudiosuite")]
+#[cfg_attr(docsrs, doc(cfg(feature = "ohaudiosuite")))]
+pub use ohos_ohaudiosuite_sys as ohaudiosuite;
+
+#[cfg(feature = "ohcamera")]
+#[cfg_attr(docsrs, doc(cfg(feature = "ohcamera")))]
+pub use ohos_ohcamera_sys as ohcamera;
 
 #[cfg(feature = "web")]
 #[cfg_attr(docsrs, doc(cfg(feature = "web")))]
@@ -103,6 +115,10 @@ pub use ohos_pasteboard_sys as pasteboard;
 #[cfg(feature = "rawfile")]
 #[cfg_attr(docsrs, doc(cfg(feature = "rawfile")))]
 pub use ohos_rawfile_sys as rawfile;
+
+#[cfg(feature = "resourcemanager")]
+#[cfg_attr(docsrs, doc(cfg(feature = "resourcemanager")))]
+pub use ohos_resourcemanager_sys as resourcemanager;
 
 #[cfg(feature = "rdb")]
 #[cfg_attr(docsrs, doc(cfg(feature = "rdb")))]
@@ -183,6 +199,10 @@ pub use ohos_native_display_soloist_sys as native_display_soloist;
 #[cfg_attr(docsrs, doc(cfg(feature = "native-effect")))]
 pub use ohos_native_effect_sys as native_effect;
 
+#[cfg(feature = "native-fence")]
+#[cfg_attr(docsrs, doc(cfg(feature = "native-fence")))]
+pub use ohos_native_fence_sys as native_fence;
+
 #[cfg(feature = "purgeable-memory")]
 #[cfg_attr(docsrs, doc(cfg(feature = "purgeable-memory")))]
 pub use ohos_purgeable_memory_sys as purgeable_memory;
@@ -219,6 +239,10 @@ pub use ohos_bundle_sys as bundle;
 #[cfg_attr(docsrs, doc(cfg(feature = "hiappevent")))]
 pub use ohos_hiappevent_sys as hiappevent;
 
+#[cfg(feature = "i18n")]
+#[cfg_attr(docsrs, doc(cfg(feature = "i18n")))]
+pub use ohos_i18n_sys as i18n;
+
 #[cfg(feature = "drm")]
 #[cfg_attr(docsrs, doc(cfg(feature = "drm")))]
 pub use ohos_drm_sys as drm;
@@ -227,6 +251,14 @@ pub use ohos_drm_sys as drm;
 #[cfg_attr(docsrs, doc(cfg(feature = "image-effect")))]
 pub use ohos_image_effect_sys as image_effect;
 
+#[cfg(feature = "mindspore")]
+#[cfg_attr(docsrs, doc(cfg(feature = "mindspore")))]
+pub use ohos_mindspore_sys as mindspore;
+
 #[cfg(feature = "neural-network-runtime")]
 #[cfg_attr(docsrs, doc(cfg(feature = "neural-network-runtime")))]
 pub use ohos_neural_network_runtime_sys as neural_network_runtime;
+
+#[cfg(feature = "teekit")]
+#[cfg_attr(docsrs, doc(cfg(feature = "teekit")))]
+pub use ohos_teekit_sys as teekit;

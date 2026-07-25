@@ -21,7 +21,7 @@ already been generated.
 | IPCKit                                  | ✅      | 23        | [ohos-ipckit-sys]         |
 | LocationKit                             | ✅      | 23        | [ohos-locationkit-sys]    |
  | NotificationKit                         | ✅      | 23        | [ohos-notificationkit-sys] |
-| TEEKit                                  |        |           |                           |
+| TEEKit                                  | ✅      | 23        | [ohos-teekit-sys]         |
 | accesstoken                             | ✅      | 23        | [ohos-accesstoken-sys]    |
 | ace/xcomponent                          | ✅      | 23        | [xcomponent-sys]          |
 | ark_runtime                             | ✅      | 23        | [ohos-ark-runtime-sys]    |
@@ -31,7 +31,7 @@ already been generated.
 | database                                | ✅      | 23        | [ohos-rdb-sys]            |
 | background_process_manager              | ✅      | 23        | [ohos-background-process-manager-sys] |
 | ddk                                     | ✅      | 23        | [ohos-ddk-sys]            |
-| distributedhardware                     |        |           |                           |
+| distributedhardware                     | ✅      | 23        | [ohos-distributedhardware-sys] |
 | ffrt                                    | ✅      | 23        | [ohos-ffrt-sys]           |
 | filemanagement                          | ✅      | 23        | [ohos-filemanagement-sys] |
 | hiappevent                              | ✅      | 23        | [ohos-hiappevent-sys]     |
@@ -41,14 +41,15 @@ already been generated.
 | hilog                                   | ✅      | 23        | [hilog-sys]               |
 | hitrace                                 | ✅      | 23        | [hitrace-sys]             |
 | huks                                    | ✅      | 23        | [ohos-huks-sys]           |
+| i18n                                    | ✅      | 23        | [ohos-i18n-sys]           |
 | info                                    | ✅      | 23        | [ohos-deviceinfo-sys]     |
 | inputmethod                             | ✅      | 23        | [ohos-ime-sys]            |
-| mindspore                               |        |           |                           |
-| multimedia/av_session                   |        |           |                           |
+| mindspore                               | ✅      | 23        | [ohos-mindspore-sys]      |
+| multimedia/av_session                   | ✅      | 23        | [ohos-av-session-sys]     |
 | multimedia/drm_framework                | ✅      | 23        | [ohos-drm-sys]            |
 | multimedia/image_effect                 | ✅      | 23        | [ohos-image-effect-sys]   |
 | multimedia/image_framework              | ✅      | 23        | [ohos-image-kit-sys]      |
-| multimedia/media_library                |        |           |                           |
+| multimedia/media_library                | ✅      | 23        | [ohos-media-library-sys]  |
 | multimedia/player_framework             | ✅      | 23        | [ohos-media-sys]          |
 | multimedia/video_processing_engine      | ✅      | 23        | [ohos-video-processing-engine-sys] |
 | multimodalinput                         | ✅      | 23        | [ohos-input-sys]          |
@@ -58,7 +59,7 @@ already been generated.
 | native_display_soloist                  | ✅      | 23        | [ohos-native-display-soloist-sys] |
 | native_drawing                          | ✅      | 23        | [ohos-drawing-sys]        |
 | native_effect                           | ✅      | 23        | [ohos-native-effect-sys]  |
-| native_fence                            | ✅      | 23        | [ohos-window-sys]         |
+| native_fence                            | ✅      | 23        | [ohos-native-fence-sys]   |
 | native_image                            | ✅      | 23        | [ohos-window-sys]         |
 | native_vsync                            | ✅      | 23        | [ohos-vsync-sys]          |
 | native_window                           | ✅      | 23        | [ohos-window-sys]         |
@@ -67,12 +68,13 @@ already been generated.
 | network/netstack/net_ssl                | ✅      | 23        | [ohos-net-ssl-sys]        |
 | neural_network_runtime                  | ✅      | 23        | [ohos-neural-network-runtime-sys] |
 | ohaudio                                 | ✅      | 23        | [ohaudio-sys]             |
-| ohcamera                                |        |           |                           |
+| ohcamera                                | ✅      | 23        | [ohos-ohcamera-sys]       |
+| ohaudiosuite                            | ✅      | 23        | [ohos-ohaudiosuite-sys]   |
 | Pasteboard                              | ✅      | 23        | [ohos-pasteboard-sys]     |
 | purgeable_memory                        | ✅      | 23        | [ohos-purgeable-memory-sys] |
 | qos                                     | ✅      | 23        | [ohos-libqos-sys]         |
 | rawfile                                 | ✅      | 23        | [ohos-rawfile-sys]        |
-| resourcemanager                         |        |           |                           |
+| resourcemanager                         | ✅      | 23        | [ohos-resourcemanager-sys] |
 | sensors                                 | ✅      | 23        | [ohos-sensors-sys]        |
 | SCSI Peripherals                        | ✅      | 23        | [ohos-scsi-peripheral-sys] |
 | telephony                               | ✅      | 23        | [ohos-telephony-sys]      |
@@ -142,6 +144,16 @@ already been generated.
 [ohos-ffrt-sys]: https://docs.rs/ohos-ffrt-sys/latest/ohos_ffrt_sys/
 [ohos-connectivitykit-sys]: https://docs.rs/ohos-connectivitykit-sys/latest/ohos_connectivitykit_sys/
 [ohos-filemanagement-sys]: https://docs.rs/ohos-filemanagement-sys/latest/ohos_filemanagement_sys/
+[ohos-distributedhardware-sys]: https://docs.rs/ohos-distributedhardware-sys/latest/ohos_distributedhardware_sys/
+[ohos-native-fence-sys]: https://docs.rs/ohos-native-fence-sys/latest/ohos_native_fence_sys/
+[ohos-resourcemanager-sys]: https://docs.rs/ohos-resourcemanager-sys/latest/ohos_resourcemanager_sys/
+[ohos-mindspore-sys]: https://docs.rs/ohos-mindspore-sys/latest/ohos_mindspore_sys/
+[ohos-teekit-sys]: https://docs.rs/ohos-teekit-sys/latest/ohos_teekit_sys/
+[ohos-i18n-sys]: https://docs.rs/ohos-i18n-sys/latest/ohos_i18n_sys/
+[ohos-av-session-sys]: https://docs.rs/ohos-av-session-sys/latest/ohos_av_session_sys/
+[ohos-media-library-sys]: https://docs.rs/ohos-media-library-sys/latest/ohos_media_library_sys/
+[ohos-ohaudiosuite-sys]: https://docs.rs/ohos-ohaudiosuite-sys/latest/ohos_ohaudiosuite_sys/
+[ohos-ohcamera-sys]: https://docs.rs/ohos-ohcamera-sys/latest/ohos_ohcamera_sys/
 
 
 ## Development

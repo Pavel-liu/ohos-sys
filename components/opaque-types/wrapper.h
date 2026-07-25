@@ -6,6 +6,8 @@
 #include "multimodalinput/oh_input_manager.h"
 #include "native_window/external_window.h"
 #include "multimedia/image_framework/image/image_source_native.h"
+#include "multimedia/image_framework/image/image_native.h"
+#include "multimedia/media_library/media_asset_base_capi.h"
 #include "multimedia/player_framework/native_avformat.h"
 #include "database/udmf/udmf.h"
 #include "database/udmf/uds.h"
