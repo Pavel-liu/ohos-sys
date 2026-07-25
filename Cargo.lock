@@ -424,6 +424,7 @@ dependencies = [
  "ohos-connectivitykit-sys",
  "ohos-crypto-sys",
  "ohos-dataprotectionkit-sys",
+ "ohos-ddk-sys",
  "ohos-deviceinfo-sys",
  "ohos-drawing-sys",
  "ohos-ffrt-sys",

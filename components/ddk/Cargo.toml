@@ -2,7 +2,7 @@
 name = "ohos-ddk-sys"
 version = "0.1.0"
 edition = "2021"
-keywords = ["OpenHarmony", "HarmonyOS", "ddk", "driver", "development", "kit"]
+keywords = ["OpenHarmony", "HarmonyOS", "ffi", "ddk", "driver"]
 license = "Apache-2.0"
 description = "Bindings to the DDK (Driver Development Kit) API of OpenHarmony"
 repository = "https://github.com/openharmony-rs/ohos-sys"
