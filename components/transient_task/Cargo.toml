@@ -2,7 +2,7 @@
 name = "ohos-transient-task-sys"
 version = "0.1.0"
 edition = "2021"
-keywords = ["OpenHarmony", "HarmonyOS", "transient", "task", "suspension", "background"]
+keywords = ["OpenHarmony", "HarmonyOS", "ffi", "transient", "task"]
 license = "Apache-2.0"
 description = "Bindings to the TransientTask (transient task suspension delay) API of OpenHarmony"
 repository = "https://github.com/openharmony-rs/ohos-sys"

@@ -2,7 +2,7 @@
 name = "ohos-filemanagement-sys"
 version = "0.1.0"
 edition = "2021"
-keywords = ["OpenHarmony", "HarmonyOS", "ffi", "filemanagement", "fileio", "fileshare", "environment"]
+keywords = ["OpenHarmony", "HarmonyOS", "ffi", "file", "storage"]
 license = "Apache-2.0"
 description = "Raw bindings to the OpenHarmony CoreFileKit native APIs"
 repository = "https://github.com/openharmony-rs/ohos-sys"

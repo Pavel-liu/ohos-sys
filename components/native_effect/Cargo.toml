@@ -2,7 +2,7 @@
 name = "ohos-native-effect-sys"
 version = "0.1.0"
 edition = "2021"
-keywords = ["OpenHarmony", "HarmonyOS", "effect", "filter", "native", "graphics"]
+keywords = ["OpenHarmony", "HarmonyOS", "ffi", "effect", "filter"]
 license = "Apache-2.0"
 description = "Bindings to the NativeEffect (visual effect filter) API of OpenHarmony"
 repository = "https://github.com/openharmony-rs/ohos-sys"

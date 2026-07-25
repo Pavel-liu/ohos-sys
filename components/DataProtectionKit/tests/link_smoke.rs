@@ -1,7 +1,9 @@
 #[cfg(feature = "api-14")]
 #[test]
 fn link_smoke_api_14() {
-    use ohos_dataprotectionkit_sys::*;
-    let _: DLP_ErrCode = DLP_ErrCode::ERR_OH_SUCCESS;
-    let _: DLP_FileAccess = DLP_FileAccess::NO_PERMISSION;
+    let _f: unsafe extern "C" fn(
+        *mut ohos_dataprotectionkit_sys::DLP_FileAccess,
+        *mut u32,
+    ) -> ohos_dataprotectionkit_sys::DLP_ErrCode =
+        ohos_dataprotectionkit_sys::OH_DLP_GetDlpPermissionInfo;
 }

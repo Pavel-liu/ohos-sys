@@ -2,7 +2,7 @@
 name = "ohos-usb-sys"
 version = "0.1.0"
 edition = "2021"
-keywords = ["OpenHarmony", "HarmonyOS", "usb", "ddk", "driver", "development", "kit"]
+keywords = ["OpenHarmony", "HarmonyOS", "ffi", "usb", "ddk"]
 license = "Apache-2.0"
 description = "Bindings to the USB DDK (Universal Serial Bus Driver Development Kit) API of OpenHarmony"
 repository = "https://github.com/openharmony-rs/ohos-sys"

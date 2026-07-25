@@ -142,3 +142,91 @@ pub use xcomponent_sys as xcomponent;
 #[cfg(feature = "window_manager")]
 #[cfg_attr(docsrs, doc(cfg(feature = "window_manager")))]
 pub use ohos_window_manager_sys as window_manager;
+
+#[cfg(feature = "dataprotectionkit")]
+#[cfg_attr(docsrs, doc(cfg(feature = "dataprotectionkit")))]
+pub use ohos_dataprotectionkit_sys as dataprotectionkit;
+
+#[cfg(feature = "telephony")]
+#[cfg_attr(docsrs, doc(cfg(feature = "telephony")))]
+pub use ohos_telephony_sys as telephony;
+
+#[cfg(feature = "usb")]
+#[cfg_attr(docsrs, doc(cfg(feature = "usb")))]
+pub use ohos_usb_sys as usb;
+
+#[cfg(feature = "ffrt")]
+#[cfg_attr(docsrs, doc(cfg(feature = "ffrt")))]
+pub use ohos_ffrt_sys as ffrt;
+
+#[cfg(feature = "connectivitykit")]
+#[cfg_attr(docsrs, doc(cfg(feature = "connectivitykit")))]
+pub use ohos_connectivitykit_sys as connectivitykit;
+
+#[cfg(feature = "filemanagement")]
+#[cfg_attr(docsrs, doc(cfg(feature = "filemanagement")))]
+pub use ohos_filemanagement_sys as filemanagement;
+
+#[cfg(feature = "hid")]
+#[cfg_attr(docsrs, doc(cfg(feature = "hid")))]
+pub use ohos_hid_sys as hid;
+
+#[cfg(feature = "native-color-space-manager")]
+#[cfg_attr(docsrs, doc(cfg(feature = "native-color-space-manager")))]
+pub use ohos_native_color_space_manager_sys as native_color_space_manager;
+
+#[cfg(feature = "native-display-soloist")]
+#[cfg_attr(docsrs, doc(cfg(feature = "native-display-soloist")))]
+pub use ohos_native_display_soloist_sys as native_display_soloist;
+
+#[cfg(feature = "native-effect")]
+#[cfg_attr(docsrs, doc(cfg(feature = "native-effect")))]
+pub use ohos_native_effect_sys as native_effect;
+
+#[cfg(feature = "purgeable-memory")]
+#[cfg_attr(docsrs, doc(cfg(feature = "purgeable-memory")))]
+pub use ohos_purgeable_memory_sys as purgeable_memory;
+
+#[cfg(feature = "scsi-peripheral")]
+#[cfg_attr(docsrs, doc(cfg(feature = "scsi-peripheral")))]
+pub use ohos_scsi_peripheral_sys as scsi_peripheral;
+
+#[cfg(feature = "transient-task")]
+#[cfg_attr(docsrs, doc(cfg(feature = "transient-task")))]
+pub use ohos_transient_task_sys as transient_task;
+
+#[cfg(feature = "usb-serial")]
+#[cfg_attr(docsrs, doc(cfg(feature = "usb-serial")))]
+pub use ohos_usb_serial_sys as usb_serial;
+
+#[cfg(feature = "gamecontrollerkit")]
+#[cfg_attr(docsrs, doc(cfg(feature = "gamecontrollerkit")))]
+pub use ohos_gamecontrollerkit_sys as gamecontrollerkit;
+
+#[cfg(feature = "notificationkit")]
+#[cfg_attr(docsrs, doc(cfg(feature = "notificationkit")))]
+pub use ohos_notificationkit_sys as notificationkit;
+
+#[cfg(feature = "ark-runtime")]
+#[cfg_attr(docsrs, doc(cfg(feature = "ark-runtime")))]
+pub use ohos_ark_runtime_sys as ark_runtime;
+
+#[cfg(feature = "bundle")]
+#[cfg_attr(docsrs, doc(cfg(feature = "bundle")))]
+pub use ohos_bundle_sys as bundle;
+
+#[cfg(feature = "hiappevent")]
+#[cfg_attr(docsrs, doc(cfg(feature = "hiappevent")))]
+pub use ohos_hiappevent_sys as hiappevent;
+
+#[cfg(feature = "drm")]
+#[cfg_attr(docsrs, doc(cfg(feature = "drm")))]
+pub use ohos_drm_sys as drm;
+
+#[cfg(feature = "image-effect")]
+#[cfg_attr(docsrs, doc(cfg(feature = "image-effect")))]
+pub use ohos_image_effect_sys as image_effect;
+
+#[cfg(feature = "neural-network-runtime")]
+#[cfg_attr(docsrs, doc(cfg(feature = "neural-network-runtime")))]
+pub use ohos_neural_network_runtime_sys as neural_network_runtime;

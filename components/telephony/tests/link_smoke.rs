@@ -1,9 +1,15 @@
 #![cfg(feature = "api-13")]
 
-use ohos_telephony_sys as telephony;
+#[test]
+fn link_smoke_data_api_13() {
+    let _f: unsafe extern "C" fn() -> i32 =
+        ohos_telephony_sys::OH_Telephony_GetDefaultCellularDataSlotId;
+}
 
 #[test]
-fn link_smoke() {
-    let mut state: telephony::Telephony_NetworkState = unsafe { core::mem::zeroed() };
-    let _ = unsafe { telephony::OH_Telephony_GetNetworkState(&mut state) };
+fn link_smoke_radio_api_13() {
+    let _f: unsafe extern "C" fn(
+        *mut ohos_telephony_sys::Telephony_NetworkState,
+    ) -> ohos_telephony_sys::Telephony_RadioResult =
+        ohos_telephony_sys::OH_Telephony_GetNetworkState;
 }

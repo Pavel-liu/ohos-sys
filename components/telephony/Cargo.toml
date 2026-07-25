@@ -2,7 +2,7 @@
 name = "ohos-telephony-sys"
 version = "0.1.0"
 edition = "2021"
-keywords = ["OpenHarmony", "HarmonyOS", "ffi", "telephony", "cellular", "radio"]
+keywords = ["OpenHarmony", "HarmonyOS", "ffi", "telephony", "radio"]
 license = "Apache-2.0"
 description = "Raw bindings to the OpenHarmony TelephonyKit native APIs"
 repository = "https://github.com/openharmony-rs/ohos-sys"

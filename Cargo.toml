@@ -39,6 +39,23 @@ ohos-abilitykit-sys = { version = "0.1.6", optional = true, path = "components/a
 ohos-background-process-manager-sys = { version = "0.1.0", optional = true, path = "components/background_process_manager" }
 ohos-deviceinfo-sys = { version = "0.1.7", optional = true, path = "components/deviceinfo" }
 ohos-ddk-sys = { version = "0.1.0", optional = true, path = "components/ddk" }
+ohos-hid-sys = { version = "0.1.0", optional = true, path = "components/hid" }
+ohos-native-color-space-manager-sys = { version = "0.1.0", optional = true, path = "components/native_color_space_manager" }
+ohos-native-display-soloist-sys = { version = "0.1.0", optional = true, path = "components/native_display_soloist" }
+ohos-native-effect-sys = { version = "0.1.0", optional = true, path = "components/native_effect" }
+ohos-purgeable-memory-sys = { version = "0.1.0", optional = true, path = "components/purgeable_memory" }
+ohos-scsi-peripheral-sys = { version = "0.1.0", optional = true, path = "components/scsi_peripheral" }
+ohos-transient-task-sys = { version = "0.1.0", optional = true, path = "components/transient_task" }
+ohos-usb-serial-sys = { version = "0.1.0", optional = true, path = "components/usb_serial" }
+ohos-gamecontrollerkit-sys = { version = "0.1.0", optional = true, path = "components/GameControllerKit" }
+ohos-notificationkit-sys = { version = "0.1.0", optional = true, path = "components/NotificationKit" }
+ohos-ark-runtime-sys = { version = "0.1.0", optional = true, path = "components/ark_runtime" }
+ohos-bundle-sys = { version = "0.1.0", optional = true, path = "components/bundle" }
+ohos-hiappevent-sys = { version = "0.1.0", optional = true, path = "components/hiappevent" }
+ohos-drm-sys = { version = "0.1.0", optional = true, path = "components/multimedia/drm_framework" }
+ohos-image-effect-sys = { version = "0.1.0", optional = true, path = "components/multimedia/image_effect" }
+ohos-neural-network-runtime-sys = { version = "0.1.0", optional = true, path = "components/neural_network_runtime" }
+ohos-usb-sys = { version = "0.1.0", optional = true, path = "components/usb" }
 ohos-drawing-sys = { path = "components/drawing", version = "0.3.4", optional = true }
 ohos-hidebug-sys = { version = "0.1.0", optional = true, path = "components/hidebug" }
 ohos-hicollie-sys = { version = "0.1.0", optional = true, path = "components/hicollie" }
@@ -108,6 +125,23 @@ huks = ["dep:ohos-huks-sys"]
 deviceinfo = ["dep:ohos-deviceinfo-sys"]
 ## Enables bindings to the Driver Development Kit API. Re-exports `ohos-ddk-sys`.
 ddk = ["dep:ohos-ddk-sys"]
+hid = ["dep:ohos-hid-sys"]
+native-color-space-manager = ["dep:ohos-native-color-space-manager-sys"]
+native-display-soloist = ["dep:ohos-native-display-soloist-sys"]
+native-effect = ["dep:ohos-native-effect-sys"]
+purgeable-memory = ["dep:ohos-purgeable-memory-sys"]
+scsi-peripheral = ["dep:ohos-scsi-peripheral-sys"]
+transient-task = ["dep:ohos-transient-task-sys"]
+usb-serial = ["dep:ohos-usb-serial-sys"]
+gamecontrollerkit = ["dep:ohos-gamecontrollerkit-sys"]
+notificationkit = ["dep:ohos-notificationkit-sys"]
+ark-runtime = ["dep:ohos-ark-runtime-sys"]
+bundle = ["dep:ohos-bundle-sys"]
+hiappevent = ["dep:ohos-hiappevent-sys"]
+drm = ["dep:ohos-drm-sys"]
+image-effect = ["dep:ohos-image-effect-sys"]
+neural-network-runtime = ["dep:ohos-neural-network-runtime-sys"]
+usb = ["dep:ohos-usb-sys"]
 ## Enables bindings to `native_drawing`. Re-exports `ohos-drawing-sys`.
 drawing = ["dep:ohos-drawing-sys", "arkui-sys?/drawing"]
 ## Enables bindings to `hilog`
@@ -202,6 +236,23 @@ all-components = [
     "huks",
     "deviceinfo",
     "ddk",
+    "hid",
+    "native-color-space-manager",
+    "native-display-soloist",
+    "native-effect",
+    "purgeable-memory",
+    "scsi-peripheral",
+    "transient-task",
+    "usb-serial",
+    "gamecontrollerkit",
+    "notificationkit",
+    "ark-runtime",
+    "bundle",
+    "hiappevent",
+    "drm",
+    "image-effect",
+    "neural-network-runtime",
+    "usb",
     "drawing",
     "hilog",
     "hitrace",
@@ -251,7 +302,7 @@ all-components = [
 #! OpenHarmony versions.
 
 ## No effect. API-10 bindings can't be deselected. The feature exists for internal purposes.
-api-10 = ["ohos-media-sys?/api-10", "ohos-ffrt-sys?/api-10"]
+api-10 = ["ohos-media-sys?/api-10", "ohos-ffrt-sys?/api-10", "ohos-purgeable-memory-sys?/api-10", "ohos-usb-sys?/api-10"]
 ## Enables bindings for OpenHarmony API-level 11
 api-11 = [
     "api-10",
@@ -275,6 +326,14 @@ api-11 = [
     "udmf-sys?/api-11",
     "xcomponent-sys?/api-11",
     "ohos-ffrt-sys?/api-11",
+    "ohos-purgeable-memory-sys?/api-11",
+    "ohos-hid-sys?/api-11",
+    "ohos-transient-task-sys?/api-11",
+    "ohos-usb-sys?/api-11",
+    "ohos-ark-runtime-sys?/api-11",
+    "ohos-bundle-sys?/api-11",
+    "ohos-drm-sys?/api-11",
+    "ohos-neural-network-runtime-sys?/api-11",
 ]
 ## Enables bindings for OpenHarmony API-level 12
 api-12 = [
@@ -317,6 +376,18 @@ api-12 = [
     "udmf-sys?/api-12",
     "xcomponent-sys?/api-12",
     "ohos-ffrt-sys?/api-12",
+    "ohos-purgeable-memory-sys?/api-12",
+    "ohos-hid-sys?/api-12",
+    "ohos-transient-task-sys?/api-12",
+    "ohos-native-display-soloist-sys?/api-12",
+    "ohos-native-effect-sys?/api-12",
+    "ohos-usb-sys?/api-12",
+    "ohos-ark-runtime-sys?/api-12",
+    "ohos-bundle-sys?/api-12",
+    "ohos-hiappevent-sys?/api-12",
+    "ohos-image-effect-sys?/api-12",
+    "ohos-drm-sys?/api-12",
+    "ohos-neural-network-runtime-sys?/api-12",
 ]
 
 ## Enables bindings for OpenHarmony API-level 13
@@ -361,6 +432,21 @@ api-13 = [
     "udmf-sys?/api-13",
     "xcomponent-sys?/api-13",
     "ohos-ffrt-sys?/api-13",
+    "ohos-purgeable-memory-sys?/api-13",
+    "ohos-hid-sys?/api-13",
+    "ohos-transient-task-sys?/api-13",
+    "ohos-native-display-soloist-sys?/api-13",
+    "ohos-native-effect-sys?/api-13",
+    "ohos-usb-sys?/api-13",
+    "ohos-ark-runtime-sys?/api-13",
+    "ohos-bundle-sys?/api-13",
+    "ohos-hiappevent-sys?/api-13",
+    "ohos-image-effect-sys?/api-13",
+    "ohos-notificationkit-sys?/api-13",
+    "ohos-native-color-space-manager-sys?/api-13",
+    "ohos-drm-sys?/api-13",
+    "ohos-neural-network-runtime-sys?/api-13",
+    "ohos-connectivitykit-sys?/api-13",
 ]
 
 ## Enables bindings for OpenHarmony API-level 14
@@ -406,6 +492,21 @@ api-14 = [
     "udmf-sys?/api-14",
     "xcomponent-sys?/api-14",
     "ohos-ffrt-sys?/api-14",
+    "ohos-purgeable-memory-sys?/api-14",
+    "ohos-hid-sys?/api-14",
+    "ohos-transient-task-sys?/api-14",
+    "ohos-native-display-soloist-sys?/api-14",
+    "ohos-native-effect-sys?/api-14",
+    "ohos-usb-sys?/api-14",
+    "ohos-ark-runtime-sys?/api-14",
+    "ohos-bundle-sys?/api-14",
+    "ohos-hiappevent-sys?/api-14",
+    "ohos-image-effect-sys?/api-14",
+    "ohos-notificationkit-sys?/api-14",
+    "ohos-native-color-space-manager-sys?/api-14",
+    "ohos-drm-sys?/api-14",
+    "ohos-neural-network-runtime-sys?/api-14",
+    "ohos-connectivitykit-sys?/api-14",
 ]
 
 ## Enables bindings for OpenHarmony API-level 15
@@ -451,6 +552,21 @@ api-15 = [
     "udmf-sys?/api-15",
     "xcomponent-sys?/api-15",
     "ohos-ffrt-sys?/api-15",
+    "ohos-purgeable-memory-sys?/api-15",
+    "ohos-hid-sys?/api-15",
+    "ohos-transient-task-sys?/api-15",
+    "ohos-native-display-soloist-sys?/api-15",
+    "ohos-native-effect-sys?/api-15",
+    "ohos-usb-sys?/api-15",
+    "ohos-ark-runtime-sys?/api-15",
+    "ohos-bundle-sys?/api-15",
+    "ohos-hiappevent-sys?/api-15",
+    "ohos-image-effect-sys?/api-15",
+    "ohos-notificationkit-sys?/api-15",
+    "ohos-native-color-space-manager-sys?/api-15",
+    "ohos-drm-sys?/api-15",
+    "ohos-neural-network-runtime-sys?/api-15",
+    "ohos-connectivitykit-sys?/api-15",
 ]
 
 ## Enables bindings for OpenHarmony API-level 16.
@@ -495,6 +611,21 @@ api-16 = ["api-15",
     "udmf-sys?/api-16",
     "xcomponent-sys?/api-16",
     "ohos-ffrt-sys?/api-16",
+    "ohos-purgeable-memory-sys?/api-16",
+    "ohos-hid-sys?/api-16",
+    "ohos-transient-task-sys?/api-16",
+    "ohos-native-display-soloist-sys?/api-16",
+    "ohos-native-effect-sys?/api-16",
+    "ohos-usb-sys?/api-16",
+    "ohos-ark-runtime-sys?/api-16",
+    "ohos-bundle-sys?/api-16",
+    "ohos-hiappevent-sys?/api-16",
+    "ohos-image-effect-sys?/api-16",
+    "ohos-notificationkit-sys?/api-16",
+    "ohos-native-color-space-manager-sys?/api-16",
+    "ohos-drm-sys?/api-16",
+    "ohos-neural-network-runtime-sys?/api-16",
+    "ohos-connectivitykit-sys?/api-16",
 ]
 ## Enables bindings for OpenHarmony API-level 17.
 api-17 = ["api-16",
@@ -539,6 +670,21 @@ api-17 = ["api-16",
     "udmf-sys?/api-17",
     "xcomponent-sys?/api-17",
     "ohos-ffrt-sys?/api-17",
+    "ohos-purgeable-memory-sys?/api-17",
+    "ohos-hid-sys?/api-17",
+    "ohos-transient-task-sys?/api-17",
+    "ohos-native-display-soloist-sys?/api-17",
+    "ohos-native-effect-sys?/api-17",
+    "ohos-usb-sys?/api-17",
+    "ohos-ark-runtime-sys?/api-17",
+    "ohos-bundle-sys?/api-17",
+    "ohos-hiappevent-sys?/api-17",
+    "ohos-image-effect-sys?/api-17",
+    "ohos-notificationkit-sys?/api-17",
+    "ohos-native-color-space-manager-sys?/api-17",
+    "ohos-drm-sys?/api-17",
+    "ohos-neural-network-runtime-sys?/api-17",
+    "ohos-connectivitykit-sys?/api-17",
 ]
 ## Enables bindings for OpenHarmony API-level 18 (5.1.0).
 api-18 = ["api-17",
@@ -583,6 +729,23 @@ api-18 = ["api-17",
     "udmf-sys?/api-18",
     "xcomponent-sys?/api-18",
     "ohos-ffrt-sys?/api-18",
+    "ohos-purgeable-memory-sys?/api-18",
+    "ohos-hid-sys?/api-18",
+    "ohos-transient-task-sys?/api-18",
+    "ohos-native-display-soloist-sys?/api-18",
+    "ohos-native-effect-sys?/api-18",
+    "ohos-usb-sys?/api-18",
+    "ohos-ark-runtime-sys?/api-18",
+    "ohos-bundle-sys?/api-18",
+    "ohos-hiappevent-sys?/api-18",
+    "ohos-image-effect-sys?/api-18",
+    "ohos-notificationkit-sys?/api-18",
+    "ohos-native-color-space-manager-sys?/api-18",
+    "ohos-drm-sys?/api-18",
+    "ohos-neural-network-runtime-sys?/api-18",
+    "ohos-scsi-peripheral-sys?/api-18",
+    "ohos-usb-serial-sys?/api-18",
+    "ohos-connectivitykit-sys?/api-18",
 ]
 ## Enables bindings for OpenHarmony API-level 19
 api-19 = ["api-18",
@@ -627,6 +790,23 @@ api-19 = ["api-18",
     "udmf-sys?/api-19",
     "xcomponent-sys?/api-19",
     "ohos-ffrt-sys?/api-19",
+    "ohos-purgeable-memory-sys?/api-19",
+    "ohos-hid-sys?/api-19",
+    "ohos-transient-task-sys?/api-19",
+    "ohos-native-display-soloist-sys?/api-19",
+    "ohos-native-effect-sys?/api-19",
+    "ohos-usb-sys?/api-19",
+    "ohos-ark-runtime-sys?/api-19",
+    "ohos-bundle-sys?/api-19",
+    "ohos-hiappevent-sys?/api-19",
+    "ohos-image-effect-sys?/api-19",
+    "ohos-notificationkit-sys?/api-19",
+    "ohos-native-color-space-manager-sys?/api-19",
+    "ohos-drm-sys?/api-19",
+    "ohos-neural-network-runtime-sys?/api-19",
+    "ohos-scsi-peripheral-sys?/api-19",
+    "ohos-usb-serial-sys?/api-19",
+    "ohos-connectivitykit-sys?/api-19",
 ]
 ## Enables bindings for OpenHarmony API-level 20
 api-20 = ["api-19",
@@ -671,6 +851,23 @@ api-20 = ["api-19",
     "udmf-sys?/api-20",
     "xcomponent-sys?/api-20",
     "ohos-ffrt-sys?/api-20",
+    "ohos-purgeable-memory-sys?/api-20",
+    "ohos-hid-sys?/api-20",
+    "ohos-transient-task-sys?/api-20",
+    "ohos-native-display-soloist-sys?/api-20",
+    "ohos-native-effect-sys?/api-20",
+    "ohos-usb-sys?/api-20",
+    "ohos-ark-runtime-sys?/api-20",
+    "ohos-bundle-sys?/api-20",
+    "ohos-hiappevent-sys?/api-20",
+    "ohos-image-effect-sys?/api-20",
+    "ohos-notificationkit-sys?/api-20",
+    "ohos-native-color-space-manager-sys?/api-20",
+    "ohos-drm-sys?/api-20",
+    "ohos-neural-network-runtime-sys?/api-20",
+    "ohos-scsi-peripheral-sys?/api-20",
+    "ohos-usb-serial-sys?/api-20",
+    "ohos-connectivitykit-sys?/api-20",
 ]
 ## Enables bindings for OpenHarmony API-level 21
 api-21 = ["api-20",
@@ -715,6 +912,24 @@ api-21 = ["api-20",
     "udmf-sys?/api-21",
     "xcomponent-sys?/api-21",
     "ohos-ffrt-sys?/api-21",
+    "ohos-purgeable-memory-sys?/api-21",
+    "ohos-hid-sys?/api-21",
+    "ohos-transient-task-sys?/api-21",
+    "ohos-native-display-soloist-sys?/api-21",
+    "ohos-native-effect-sys?/api-21",
+    "ohos-usb-sys?/api-21",
+    "ohos-ark-runtime-sys?/api-21",
+    "ohos-bundle-sys?/api-21",
+    "ohos-hiappevent-sys?/api-21",
+    "ohos-image-effect-sys?/api-21",
+    "ohos-notificationkit-sys?/api-21",
+    "ohos-native-color-space-manager-sys?/api-21",
+    "ohos-drm-sys?/api-21",
+    "ohos-neural-network-runtime-sys?/api-21",
+    "ohos-scsi-peripheral-sys?/api-21",
+    "ohos-usb-serial-sys?/api-21",
+    "ohos-gamecontrollerkit-sys?/api-21",
+    "ohos-connectivitykit-sys?/api-21",
 ]
 ## Enables bindings for OpenHarmony API-level 22
 api-22 = ["api-21",
@@ -759,6 +974,24 @@ api-22 = ["api-21",
     "udmf-sys?/api-22",
     "xcomponent-sys?/api-22",
     "ohos-ffrt-sys?/api-22",
+    "ohos-purgeable-memory-sys?/api-22",
+    "ohos-hid-sys?/api-22",
+    "ohos-transient-task-sys?/api-22",
+    "ohos-native-display-soloist-sys?/api-22",
+    "ohos-native-effect-sys?/api-22",
+    "ohos-usb-sys?/api-22",
+    "ohos-ark-runtime-sys?/api-22",
+    "ohos-bundle-sys?/api-22",
+    "ohos-hiappevent-sys?/api-22",
+    "ohos-image-effect-sys?/api-22",
+    "ohos-notificationkit-sys?/api-22",
+    "ohos-native-color-space-manager-sys?/api-22",
+    "ohos-drm-sys?/api-22",
+    "ohos-neural-network-runtime-sys?/api-22",
+    "ohos-scsi-peripheral-sys?/api-22",
+    "ohos-usb-serial-sys?/api-22",
+    "ohos-gamecontrollerkit-sys?/api-22",
+    "ohos-connectivitykit-sys?/api-22",
 ]
 ## Enables bindings for OpenHarmony API-level 23
 api-23 = ["api-22",
@@ -803,6 +1036,24 @@ api-23 = ["api-22",
     "udmf-sys?/api-23",
     "xcomponent-sys?/api-23",
     "ohos-ffrt-sys?/api-23",
+    "ohos-purgeable-memory-sys?/api-23",
+    "ohos-hid-sys?/api-23",
+    "ohos-transient-task-sys?/api-23",
+    "ohos-native-display-soloist-sys?/api-23",
+    "ohos-native-effect-sys?/api-23",
+    "ohos-usb-sys?/api-23",
+    "ohos-ark-runtime-sys?/api-23",
+    "ohos-bundle-sys?/api-23",
+    "ohos-hiappevent-sys?/api-23",
+    "ohos-image-effect-sys?/api-23",
+    "ohos-notificationkit-sys?/api-23",
+    "ohos-native-color-space-manager-sys?/api-23",
+    "ohos-drm-sys?/api-23",
+    "ohos-neural-network-runtime-sys?/api-23",
+    "ohos-scsi-peripheral-sys?/api-23",
+    "ohos-usb-serial-sys?/api-23",
+    "ohos-gamecontrollerkit-sys?/api-23",
+    "ohos-connectivitykit-sys?/api-23",
 ]
 
 #! ### Features of dependencies

@@ -2,7 +2,7 @@
 name = "ohos-hid-sys"
 version = "0.1.0"
 edition = "2021"
-keywords = ["OpenHarmony", "HarmonyOS", "hid", "human", "interface", "device", "ddk"]
+keywords = ["OpenHarmony", "HarmonyOS", "ffi", "hid", "ddk"]
 license = "Apache-2.0"
 description = "Bindings to the HID DDK (Human Interface Device Driver Development Kit) API of OpenHarmony"
 repository = "https://github.com/openharmony-rs/ohos-sys"

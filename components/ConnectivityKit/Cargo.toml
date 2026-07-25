@@ -2,7 +2,7 @@
 name = "ohos-connectivitykit-sys"
 version = "0.1.0"
 edition = "2021"
-keywords = ["OpenHarmony", "HarmonyOS", "ffi", "bluetooth", "wifi", "ConnectivityKit"]
+keywords = ["OpenHarmony", "HarmonyOS", "ffi", "bluetooth", "wifi"]
 license = "Apache-2.0"
 description = "Raw bindings to the OpenHarmony ConnectivityKit native APIs"
 repository = "https://github.com/openharmony-rs/ohos-sys"
